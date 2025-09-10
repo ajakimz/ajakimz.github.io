@@ -7,43 +7,136 @@
     <link rel="stylesheet" href="https://use.typekit.net/sqn8kij.css">
     <style>
         html {
-            font-family: "loos", sans-serif;
+            font-family: "new-kansas", sans-serif;
             font-weight: 400;
             font-style: normal;
         }
 
+        .flex {
+            display: flex;
+            flex-direction: row;
+        }
+
         .color_box{
-            height: 75px;
-            width: 75px;
+            height: 180px;
+            width: 180px;
+        }
+
+        .white_text {
+            color: white;
+        }
+
+        .my_button {
+            background-color: #8CA861;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: inline-block;
+            margin: 12px;
+        }
+
+        .my_button:hover {
+            background-color: #627743;
+        }
+
+        .my_button:visited {
+            color: white;
         }
 
         #box1 {
-            background-color: #6A9FC8;
+            text-align: center;
+            background-color: #F47E3E;
         }
 
         #box2 {
-            background-color: #B2D4E6;
+            text-align: center;
+            background-color: #F8C462;
         }
 
         #box3 {
+            text-align: center;
             background-color: #8CA861;
         }
 
         #box4 {
-            background-color: #F8C462;
+            text-align: center;
+            background-color: #B2D4E6;
         }
 
         #box5 {
-            background-color: #F47E3E;
+            text-align: center;
+            background-color: #6A9FC8;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        
+        p {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .small_text {
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            color:#6A9FC8;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color:#B2D4E6;
+        }
+
+        a:visited {
+            color:#F47E3E;
         }
     </style>
 </head>
 <body>
-    <div class="color_box" id="box1">color 1</div>
-    <div class="color_box" id="box2">color 2</div>
-    <div class="color_box" id="box3">color 3</div>
-    <div class="color_box" id="box4">color 4</div>
-    <div class="color_box" id="box5">color 5</div>
+    <div class="flex">
+    <div class="color_box" id="box1">
+        #F47E3E <br>
+        Black Text | 7.9:1 <br>
+        <span class="white_text">White Text | 2.65:1</span>
+    </div>
+    <div class="color_box" id="box2">
+        #F8C462 <br>
+        Black Text | 13.06:1 <br>
+        <span class="white_text">White Text | 1.6:1</span>
+    </div>
+    <div class="color_box" id="box3">
+        #8CA861 <br>
+        Black Text | 7.88:1 <br>
+        <span class="white_text">White Text | 2.66:1</span>
+    </div>
+    <div class="color_box" id="box4">
+        #B2D4E6 <br>
+        Black Text | 13.24:1 <br>
+        <span class="white_text">White Text | 1.56:1</span>
+    </div>
+    <div class="color_box" id="box5">
+        #6A9FC8 <br>
+        Black Text | 7.4:1 <br>
+        <span class="white_text">What Text | 2.83:1</span>
+    </div>
+    </div>
 
     <h1>This is a heading 1</h1>
     <h2>This is a heading 2</h2>
@@ -52,5 +145,8 @@
     <p>This is a paragraph text</p>
     <p class="small_text">This is my small text</p>
 
+    <p><a href="#">This is a link that does nothing!</a></p>
+
+    <a href="#" class="my_button">Click Me!</a>
 </body>
 </html>
