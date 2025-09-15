@@ -18,7 +18,39 @@ html {
             color: white;
         }
 
-        .my_button {
+        .my_button_orange {
+            background-color: #F47E3E;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: inline-block;
+            /* margin: 12px; */
+        }
+
+        .my_button_orange:hover {
+            background-color: #E75A0D;
+            color: black;
+            text-decoration: none;
+        }
+
+        .my_button_yellow {
+            background-color: #F8C462;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: inline-block;
+            /* margin: 12px; */
+        }
+
+        .my_button_yellow:hover {
+            background-color: #F5AD29;
+            color: black;
+            text-decoration: none;
+        }
+
+        .my_button_green {
             background-color: #8CA861;
             color: black;
             padding: 10px 20px;
@@ -28,9 +60,42 @@ html {
             /* margin: 12px; */
         }
 
-        .my_button:hover {
-            background-color: #627743;
-            text-decoration: underline;
+        .my_button_green:hover {
+            background-color: #667C46;
+            color: black;
+            text-decoration: none;
+        }
+
+        .my_button_light_blue {
+            background-color: #B2D4E6;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: inline-block;
+            /* margin: 12px; */
+        }
+
+        .my_button_light_blue:hover {
+            background-color: #83B7D8;
+            color: black;
+            text-decoration: none;
+        }
+
+        .my_button_dark_blue {
+            background-color: #6A9FC8;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: inline-block;
+            /* margin: 12px; */
+        }
+
+        .my_button_dark_blue:hover {
+            background-color: #3E7AA8;
+            color: black;
+            text-decoration: none;
         }
 
         #box1 {
@@ -85,13 +150,13 @@ html {
 
         a {
             text-decoration: none;
-            color:#6A9FC8;
+            color:#3D77A4;
         }
 
-        /* a:hover {
+        a:hover {
             text-decoration: underline;
-            color:#B2D4E6;
-        } */
+            /* color:#B2D4E6; */
+        }
 
         /* a:visited {
             color:#F47E3E;
