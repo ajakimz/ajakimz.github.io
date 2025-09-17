@@ -55,7 +55,9 @@
             display: none;
         }
         .details-hidden {
-            display: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
     </style>
 </head>
@@ -66,18 +68,34 @@
             <button class="expand-btn" aria-label="Expand card">+</button>
         </div>
         <div class="card-content">
-            <p class="summary">Join neighbors in creating a shared growing space...</p>
             <div class="details-hidden">
+                <p>Join neighbors in creating a shared growing space...</p>
                 <p>Meeting every Saturday at 10am. Tools provided. All skill levels welcome.</p>
                 <p>Contact: garden@community.org</p>
             </div>
         </div>
     </div>
+    <div id="Post-Activity Reflection" style="text-align: center; max-width: 600px; margin: auto;">
+        <h3>Post-Activity Reflection</h3>
+        <p>
+            During this activity, setting up the Flexbox layout was a little challenging, particularly when it came to spacing and paragraph breaks between different sections. I chose to hide the 
+            content by default so that users would need to actively click the button to reveal information. I think this is useful for pages with a lot of content, as it reduces visual clutter 
+            and allows users to focus on what they want to see. However, I also realized that for users relying on screen readers, collapsing content could be tedious, as they would need to 
+            navigate and open each section individually. In terms of accessibility, I made the expand button a complete circle, which is visually clean, but its small size could be an issue 
+            for users with vision impairments or motor challenges. These technical choices directly affect user control and highlight the balance between aesthetic design and accessibility.
+            <br>
+            On a broader level, this micro-interaction made me reflect on the dynamics between user autonomy and designer control. I appreciate giving users the ability to reveal content 
+            themselves while also allowing designers to hide less critical information, as it makes a site more interactive and less cluttered. This exercise also made me think about which 
+            content should always be visible versus what can be hidden: important information, like the date and time of an event, should be immediately accessible, while supplementary 
+            details could be tucked away in a collapsible section. These small design decisions can influence who feels empowered by a digital space and who may feel frustrated, highlighting 
+            the importance of balancing cognitive load with accessibility and clarity. 
+    </p>
+    </div>
     <script>
         let info = false;
 
         const expandBtn = document.querySelector('.expand-btn');
-        const details = document.querySelector('.card-content');
+        const details = document.querySelector('.details-hidden');
 
         expandBtn.addEventListener('click', showInfo);
 
