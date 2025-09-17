@@ -27,10 +27,10 @@
         }
 
         .card-content {
-            /* display: flex; */
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
             margin-top: 2rem;
             border: 0.25rem solid black;
             text-align: center;
@@ -58,6 +58,7 @@
             display: none;
             flex-direction: column;
             gap: 0.5rem;
+            width: 100%;
         }
     </style>
 </head>
@@ -92,10 +93,9 @@
     </p>
     </div>
     <script>
-        let info = false;
-
         const expandBtn = document.querySelector('.expand-btn');
         const details = document.querySelector('.details-hidden');
+        let info = false;
 
         expandBtn.addEventListener('click', showInfo);
 
@@ -115,8 +115,6 @@
                 info = false;
             }
         }
-
-
     </script>
 </body>
 </html>
