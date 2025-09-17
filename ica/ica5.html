@@ -35,6 +35,28 @@
             border: 0.25rem solid black;
             text-align: center;
         }
+
+        .expand-btn {
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            border: 2px solid black;
+            background: white;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .expand-btn:hover {
+            background: lightgray;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .details-hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -45,7 +67,7 @@
         </div>
         <div class="card-content">
             <p class="summary">Join neighbors in creating a shared growing space...</p>
-            <div class="details hidden">
+            <div class="details-hidden">
                 <p>Meeting every Saturday at 10am. Tools provided. All skill levels welcome.</p>
                 <p>Contact: garden@community.org</p>
             </div>
@@ -64,10 +86,14 @@
             // alert("this is an alert");
             if (info == false) {
                 details.style.display = "flex";
+                expandBtn.textContent = "-";
+                expandBtn.setAttribute("aria-label", "Collapse card");
                 info = true;
             }
             else {
                 details.style.display = "none";
+                expandBtn.textContent = "+";
+                expandBtn.setAttribute("aria-label", "Expand card");
                 info = false;
             }
         }
