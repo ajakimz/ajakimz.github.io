@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WA5</title>
+    <link rel="stylesheet" href="wa5.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-brand">Community Hub</div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu hide">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+</nav>
+<script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    var menu_shown = false;
+
+    function showMenu() {
+        var shown = navMenu.classList.toggle("show");
+        navmenu.classList.toggle("hide");
+
+        if (shown) {
+            navToggle.setAttribute("aria-expanded", "true");
+        } else {
+            navToggle.setAttribute("aria-expanded", "false");
+        }
+
+        navToggle.addEventListener('click', showMenu);
+    }
+</script>
+</body>
+</html>
