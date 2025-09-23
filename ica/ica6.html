@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Conversion & Interactive Components</title>
+    <style>
+        .gallery-container { 
+            display: grid; 
+            grid-template-areas: 
+                "header1 header2"
+                "nav sidebar"
+                "main sidebar"
+            ;
+            /* flex-direction: column;  */
+        }
+
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            /* flex-wrap: wrap;  */
+            gap: 1rem; 
+        }
+
+        .photo-card { 
+            flex: 1 1 300px; 
+            height: 200px; 
+        }
+
+        .featured { 
+            grid-column: span 2;
+            /* flex: 1 1 100%;  */
+            height: 300px; 
+        }
+
+        /* .parent-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            width: 315px;
+            grid-template-areas: 
+                "overall-nav1 course-nav1 main1"
+                "overall-nav2 course-nav2 main2"    
+            ;
+        }
+        
+        .box {
+            border: 2px solid black;
+            height: 100px;
+            width: 100px;
+        }
+
+        #one {
+            background-color: red;
+            grid-area: main2;
+        }
+
+        #two {
+            background-color: blue;
+            grid-area: course-nav2;
+        }
+
+        #three {
+            background-color: green;
+            grid-area: overall-nav1;
+        }
+
+        #four {
+            background-color: yellow;
+            grid-area: overall-nav2;
+
+        }
+
+        #five {
+            background-color: orange;
+            grid-area: course-nav1;
+        }
+
+        #six {
+            background-color: burlywood;
+            grid-column: 2/3;
+            grid-row: 1/2;
+            grid-area: main1;
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <header class="gallery-header">Photo Gallery</header>
+        <nav class="gallery-nav">
+            <button>All</button>
+            <button>Nature</button>
+            <button>Architecture</button>
+        </nav>
+        <main class="gallery-grid">
+            <div class="photo-card">Photo 1</div>
+            <div class="photo-card">Photo 2</div>
+            <div class="photo-card">Photo 3</div>
+            <div class="photo-card featured">Featured Photo</div>
+            <div class="photo-card">Photo 5</div>
+            <div class="photo-card">Photo 6</div>
+        </main>
+        <aside class="gallery-sidebar">Filter Options</aside>
+    </div>
+
+    <script>
+        let box1 = document.querySelector('#one').addEventListener('click', message)
+
+        function message() {
+            alert("This is a message");
+        }
+    </script>
+
+    <!-- <div class="parent-grid">
+        <div class="box" id="one"></div>
+        <div class="box" id="two"></div>
+        <div class="box" id="three"></div>
+        <div class="box" id="four"></div>
+        <div class="box" id="five"></div>
+        <div class="box" id="six"></div>
+    </div> -->
+    
+</body>
+</html>
