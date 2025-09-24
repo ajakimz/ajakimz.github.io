@@ -7,12 +7,19 @@
     <style>
         .gallery-container { 
             display: grid; 
+            grid-template-columns: 2fr 1fr;
             grid-template-areas: 
-                "header1 header2"
+                "header header"
                 "nav sidebar"
                 "main sidebar"
             ;
+            gap: 1rem;
         }
+
+        .gallery-header { grid-area: header; }
+        .gallery-nav { grid-area: nav; }
+        .gallery-main { grid-area: main; }
+        .gallery-sidebar { grid-area: sidebar; }
 
         .gallery-grid { 
             display: grid; 
@@ -26,18 +33,17 @@
             height: 200px; 
         }
 
-        .photo-card-featured { 
+        .featured { 
             grid-column: span 2;
-            /* flex: 1 1 100%;  */
             height: 200px; 
         }
 
-        .photo-card-featured img {
+        /* .featured img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 8px;
-        }
+        } */
 
         .photo-card img {
             width: 100%;
@@ -118,7 +124,7 @@
             <div class="photo-card" data-category="nature">
                 <img src="photos/trees_rainbow.jpg" alt="rainbow in front of lush trees">
             </div>
-            <div class="photo-card-featured">
+            <div class="photo-card featured">
                 <img src="photos/buffalo.jpg" alt="two buffaloes">
             </div>
             <div class="photo-card" data-category="nature">
