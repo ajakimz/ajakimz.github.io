@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WA6</title>
-    <link rel="stylesheet" href="wa5.css">
+    <title>Movie Club</title>
+    <link rel="stylesheet" href="wa6.css">
 </head>
 <body>
     <nav class="main-nav" aria-label="Main Navigation">
@@ -19,18 +19,53 @@
         </button>
         <ul class="nav-menu" id="main-menu">
             <li><a href="#home">Home</a></li>
-            <li><a href="#calendar">Calendar</a></li>
-            <li><a href="#movie-reveiws">Movie Reviews</a></li>
-            <li><a href="#upcoming-screenings">Upcoming Screenings</a></li>
+            <li><a href="#resources">Resources</a></li>
         </ul>
     </nav>
 
-    <main>
-        <p>Here is a link to my Google Doc with my Community Reseach & Planning, as well as my Critical Reflection:</p>
-        <a href="https://docs.google.com/document/d/1bbgDjT3KYSwwXcx0RxFNSUbM5Uu9qPGc-COLzuTF9hA/edit?usp=sharing" target="_blank">https://docs.google.com/document/d/1bbgDjT3KYSwwXcx0RxFNSUbM5Uu9qPGc-COLzuTF9hA/edit?usp=sharing</a>
+    <main id="home" class="grid-home">
+        <header class="hero">
+            <h1>Welcome to Movie Club!</h1>
+            <p>Discover local screenings, reviews, and community favorites.</p>
+        </header>
+        
+        <section class="featured">
+            <h2>Featured Movies</h2>
+            <label for="genre-filter">Filter by genre:</label>
+            <select id="genre-filter">
+                <option value="all">All</option>
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+            </select>
+            <div class="featured-grid">
+                <article class="movie-card" data-genre="action">
+                    <h3>Action Movie 1</h3>
+                    <p>High-octane thrills for the action lover.</p>
+                </article>
+                <article class="movie-card" data-genre="comedy">
+                    <h3>Comedy Movie 1</h3>
+                    <p>Laughs guaranteed for the whole family.</p>
+                </article>
+                <article class="movie-card" data-genre="drama">
+                    <h3>Drama Movie 1</h3>
+                    <p>Compelling stories that touch the heart.</p>
+                </article>
+            </div>
+        </section>
     </main>
 
-<script src="wa5.js" defer></script>
+    <section id="resources" class="grid-resources">
+        <h2>Upcoming Screenings</h2>
+        <ul class="screenings">
+            <li tabindex="0">Screening 1: Action Movie - 10/01/25</li>
+            <li tabindex="0">Screening 2: Comedy Movie - 10/05/25</li>
+            <li tabindex="0">Screening 3: Drama Movie - 10/10/25</li>
+        </ul>
 
+        <p id="screening-feedback" aria-live="polite"></p>
+    </section>
+
+<script src="wa6.js" defer></script>
 </body>
 </html>

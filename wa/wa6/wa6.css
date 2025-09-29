@@ -1,106 +1,150 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  margin: 0.5rem 0;
+}
+
 .main-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #D3D3D3;
-    padding: 0.75rem 1rem;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #D3D3D3;
+  padding: 0.75rem 1rem;
+  position: relative;
+}
+.nav-brand { 
+    font-weight: 700; 
+    font-size: 1.2rem; 
 }
 
-.nav-brand {
-    font-weight: 700;
-    font-size: 1.2rem;
+.nav-menu { 
+    display: flex; 
+    gap: 1.5rem; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
 }
 
-.nav-menu {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    align-items: center;
-    margin: 0;
-    padding: 0rem;
+.nav-menu a { 
+    text-decoration: none; 
+    padding: 0.5rem 0.75rem; 
+    border-radius: 6px; 
+    display: inline-block; 
+    color: #000; 
 }
 
-.nav-menu a {
-    text-decoration: none;
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
-    display: inline-block;
-    color: #000000;
-    font-size: 1rem;
+.nav-menu a:hover, .nav-menu a:focus { 
+    color: #86c8df; 
+    outline: none; 
 }
 
-.nav-menu a:hover,
-.nav-menu a:focus {
-    color: #86c8df;
-    outline: none;
+.nav-toggle { 
+    display: none; 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
 }
 
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-    min-width: 44px;
-    min-height: 44px;
+.hamburger { 
+    display: block; 
+    width: 28px; 
+    height: 3px; 
+    background-color: #000; 
+    margin: 4px 0; 
+    border-radius: 2px; }
+
+.grid-home {
+  display: grid;
+  grid-template-areas: 
+    "hero hero"
+    "featured featured"
+    "filter filter";
+  gap: 1rem;
+  padding: 1rem;
 }
 
-.hamburger {
-    display: block;
-    width: 28px;
-    height: 3px;
-    background-color: #000000;
-    margin: 4px 0;
-    border-radius: 2px;
-    transition: transform 200ms ease, opacity 200ms ease;
+.hero { 
+    grid-area: hero; 
+    background: #f0f0f0; 
+    padding: 1rem; 
+    border-radius: 6px; 
 }
 
-.nav-toggle.open .hamburger:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+.featured { 
+    grid-area: featured; 
 }
 
-.nav-toggle.open .hamburger:nth-child(2) {
-    opacity: 0;
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
 }
 
-.nav-toggle.open .hamburger:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+.movie-card { 
+    background: #e0e0ff; 
+    padding: 0.75rem; 
+    border-radius: 6px; 
+}
+
+#genre-filter { 
+    grid-area: filter; 
+    margin-top: 0.5rem; 
+}
+
+.grid-resources {
+  display: grid;
+  grid-template-areas: 
+    "resources-list"
+    "feedback";
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.screenings { 
+    grid-area: resources-list; 
+    list-style: none; 
+    padding: 0; 
+}
+
+.screenings li { 
+    background: #ffe0e0; 
+    margin: 0.25rem 0; 
+    padding: 0.5rem; 
+    border-radius: 6px; 
+    cursor: pointer; 
+}
+
+.screenings li:focus { 
+    outline: 2px solid #ff8080; 
+}
+
+#screening-feedback { 
+    grid-area: feedback; 
+    font-weight: bold; 
 }
 
 @media screen and (max-width: 768px) {
-    .nav-toggle {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-self: center;
-        flex-direction: column;
+  .nav-toggle { 
+        display: flex; 
+        flex-direction: column; 
     }
 
-    .nav-menu {
-        display: none;
+  .nav-menu { 
+        display: none; 
+        flex-direction: column; 
+        background-color: thistle; 
+        padding: 0.75rem; 
+        position: absolute; 
+        top: 100%; 
+        right: 0; 
+        width: 200px; 
     }
 
-    .nav-menu.show {
-        display: flex;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 220px;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.75rem;
-        background-color: thistle;
-        box-shadow: 0 6px 18pc rgba(0,0,0,0.12);
-        border-radius: 6px;
-        z-index: 100;
-        /* justify-content: center;
-        align-content: center; */
-    }
-
-    .nav-menu.show li a {
-        width: 100%;
-        display: block;
-        padding: 0.75rem 1rem;
+  .nav-menu.show { 
+        display: flex; 
     }
 }
