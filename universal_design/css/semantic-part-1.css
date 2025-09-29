@@ -1,0 +1,52 @@
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header, nav, main, footer {
+  padding: 20px;
+  margin: 10px auto;
+  max-width: 900px;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 15px;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0078D7;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+figure {
+  margin: 20px 0;
+}
+
+aside {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border-left: 3px solid #0078D7;
+  margin-top: 20px;
+}
