@@ -10,6 +10,34 @@
   width: 1px;
 }
 
+h1 {
+    font-family: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif 4', serif;
+    font-weight: normal;
+}
+
+h2 {
+    font: inherit;
+    font-family: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif 4', serif;
+    font-size: 150%;
+}
+
+h3 {
+    font: inherit;
+    font-weight: bold;
+    font-size: 128%;
+}
+
+h4 {
+    font: inherit
+    font-weight: bold;
+    font-size: 100%;
+}
+
+p {
+    font-family: sans-serif;
+    margin: 0.5em 0 1em 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -17,7 +45,7 @@ body {
   padding: 0;
 }
 
-header, nav, main, footer {
+header, nav, main {
   padding: 20px;
   margin: 10px auto;
   max-width: 900px;
@@ -42,11 +70,4 @@ nav a:hover {
 
 figure {
   margin: 20px 0;
-}
-
-aside {
-  background-color: #f3f3f3;
-  padding: 10px;
-  border-left: 3px solid #0078D7;
-  margin-top: 20px;
 }
