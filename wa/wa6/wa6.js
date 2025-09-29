@@ -26,40 +26,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterSelect = document.getElementById('genre-filter');
   const movieCards = document.querySelectorAll('.movie-card');
 
-  filterSelect.addEventListener('change', (e) => {
-    const genre = e.target.value;
-    movieCards.forEach(card => {
-      if (genre === 'all' || card.dataset.genre === genre) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
+  if (filterSelect && movieCards.length > 0) {
+    filterSelect.addEventListener('change', (e) => {
+      const genre = e.target.value;
+      movieCards.forEach(card => {
+        if (genre === 'all' || card.dataset.genre === genre) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     });
-  });
+  }
 
   const screenings = document.querySelectorAll('.screenings li');
   const feedback = document.getElementById('screening-feedback');
   let selected = null;
 
-  screenings.forEach(item => {
-    item.addEventListener('click', () => {
-      if (selected === item) {
-        item.classList.remove('selected');
-        selected = null;
-        feedback.textContent = '';
-      } else {
-        screenings.forEach(li => li.classList.remove('selected'));
-        item.classList.add('selected');
-        selected = item;
-        feedback.textContent = `You selected: ${item.textContent}`;
-      }
-    });
+  if (screenings.length > 0) {
+    screenings.forEach(item => {
+      item.addEventListener('click', () => {
+        if (selected === item) {
+          item.classList.remove('selected');
+          selected = null;
+          feedback.textContent = '';
+        } else {
+          screenings.forEach(li => li.classList.remove('selected'));
+          item.classList.add('selected');
+          selected = item;
+          feedback.textContent = `You selected: ${item.textContent}`;
+        }
+      });
 
-    item.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        item.click();
-      }
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          item.click();
+        }
+      });
     });
-  });
+  }
 });
