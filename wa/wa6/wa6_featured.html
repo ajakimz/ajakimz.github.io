@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Club | Featured Movies</title>
+  <link rel="stylesheet" href="/wa/wa6/wa6.css">
+</head>
+<body>
+  <nav class="main-nav" aria-label="Main Navigation">
+    <div class="nav-brand">Movie Club</div>
+    <button class="nav-toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+    <ul class="nav-menu" id="main-menu">
+      <li><a href="wa6.html">Home</a></li>
+      <li><a href="wa6_featured.html" aria-current="page">Featured Movies</a></li>
+      <li><a href="wa6_upcoming.html">Upcoming Screenings</a></li>
+    </ul>
+  </nav>
+
+  <main class="grid-home">
+    <section class="featured">
+      <h2>Featured Movies</h2>
+      <label for="genre-filter">Filter by genre:</label>
+      <select id="genre-filter">
+        <option value="all">All</option>
+        <option value="action">Action</option>
+        <option value="comedy">Comedy</option>
+        <option value="drama">Drama</option>
+      </select>
+      <div class="featured-grid">
+        <article class="movie-card" data-genre="action">
+          <h3>Action Movie 1</h3>
+          <p>High-octane thrills for the action lover.</p>
+        </article>
+        <article class="movie-card" data-genre="comedy">
+          <h3>Comedy Movie 1</h3>
+          <p>Laughs guaranteed for the whole family.</p>
+        </article>
+        <article class="movie-card" data-genre="drama">
+          <h3>Drama Movie 1</h3>
+          <p>Compelling stories that touch the heart.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="wa6.js" defer></script>
+</body>
+</html>

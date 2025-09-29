@@ -14,10 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('click', (e) => {
-    if (!navMenu.contains(e.target) && navMenu.classList.contains('show')) {
-      navMenu.classList.remove('show');
-      navToggle.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
+    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+      if (navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
     }
   });
 
@@ -37,12 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const screenings = document.querySelectorAll('.screenings li');
   const feedback = document.getElementById('screening-feedback');
+  let selected = null;
 
   screenings.forEach(item => {
     item.addEventListener('click', () => {
-      screenings.forEach(li => li.style.backgroundColor = '#ffe0e0');
-      item.style.backgroundColor = '#ffb3b3';
-      feedback.textContent = `You selected: ${item.textContent}`;
+      if (selected === item) {
+        item.classList.remove('selected');
+        selected = null;
+        feedback.textContent = '';
+      } else {
+        screenings.forEach(li => li.classList.remove('selected'));
+        item.classList.add('selected');
+        selected = item;
+        feedback.textContent = `You selected: ${item.textContent}`;
+      }
     });
 
     item.addEventListener('keydown', (e) => {

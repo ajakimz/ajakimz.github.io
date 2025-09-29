@@ -92,16 +92,21 @@ h1, h2, h3 {
 
 #genre-filter { 
     grid-area: filter; 
-    margin-top: 0.5rem; 
+    margin: 1rem 0; 
 }
 
 .grid-resources {
   display: grid;
   grid-template-areas: 
+    "title"
     "resources-list"
     "feedback";
   gap: 1rem;
   padding: 1rem;
+}
+
+.grid-resources h2 {
+    grid-area: title;
 }
 
 .screenings { 
@@ -116,6 +121,12 @@ h1, h2, h3 {
     padding: 0.5rem; 
     border-radius: 6px; 
     cursor: pointer; 
+}
+
+.screenings li.selected {
+    background-color: #ffb3b3;
+    border: 2px solid #ff8080;
+    font-weight: bold;
 }
 
 .screenings li:focus { 
