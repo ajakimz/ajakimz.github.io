@@ -139,7 +139,8 @@ nav a:hover {
     text-decoration: underline;
 }
 
-figure {
+figure img {
+    display: inline-block;
     text-align: center;
     margin: 20px 0;
 }
