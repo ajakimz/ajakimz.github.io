@@ -139,10 +139,13 @@ nav a:hover {
     text-decoration: underline;
 }
 
+figure {
+  margin: 20px 0;
+}
+
 figure img {
-    display: inline-block;
-    text-align: center;
-    margin: 20px 0;
+  display: block;
+  margin: 0 auto;
 }
 
 .indent {
