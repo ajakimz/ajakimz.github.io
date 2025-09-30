@@ -108,6 +108,12 @@ a:hover {
     text-decoration: underline;
 }
 
+main figure {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
 header, nav, main {
     padding: 20px;
     margin: 10px auto;
