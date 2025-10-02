@@ -138,6 +138,81 @@ h1, h2, h3 {
     font-weight: bold; 
 }
 
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.theme-toggle {
+  text-align: right;
+  margin: 10px;
+}
+
+.theme-toggle button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Dark mode color fixes */
+body.dark .main-nav {
+  background-color: #1e1e1e;
+}
+
+body.dark .nav-menu a {
+  color: #ffffff;
+}
+
+body.dark .nav-menu a:hover,
+body.dark .nav-menu a:focus {
+  color: #86c8df;
+}
+
+body.dark .hamburger {
+  background-color: #ffffff;
+}
+
+body.dark .hero {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+body.dark .movie-card {
+  background-color: #2f3b66;
+  color: #f0f0f0;
+}
+
+body.dark .screenings li {
+  background-color: #663333;
+  color: #ffffff;
+}
+
+body.dark .screenings li.selected {
+  background-color: #884444;
+  border: 2px solid #bb6666;
+}
+
+body.dark .grid-home,
+body.dark .grid-resources {
+  background-color: #1a1a1a;
+}
+
+body.dark .theme-toggle button {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+body.dark .theme-toggle button:hover {
+  background-color: #3a3a3a;
+}
+
 @media screen and (max-width: 768px) {
   .nav-toggle { 
         display: flex; 
