@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Club | Upcoming Screenings</title>
+  <link rel="stylesheet" href="/wa/wa7/wa7.css">
+</head>
+<body>
+  <nav class="main-nav" aria-label="Main Navigation">
+    <div class="nav-brand">Movie Club</div>
+    <button class="nav-toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+    <ul class="nav-menu" id="main-menu">
+      <li><a href="wa7.html">Home</a></li>
+      <li><a href="wa7_featured.html">Featured Movies</a></li>
+      <li><a href="wa7_upcoming.html" aria-current="page">Upcoming Screenings</a></li>
+    </ul>
+    <div class="theme-toggle">
+            <button onclick="setTheme('light')">Light Mode</button>
+            <button onclick="setTheme('dark')">Dark Mode</button>
+        </div>
+  </nav>
+
+  <section id="resources" class="grid-resources">
+    <h2>Upcoming Screenings</h2>
+    <ul class="screenings">
+      <li tabindex="0">Screening 1: Action Movie - 10/01/25</li>
+      <li tabindex="0">Screening 2: Comedy Movie - 10/05/25</li>
+      <li tabindex="0">Screening 3: Drama Movie - 10/10/25</li>
+    </ul>
+    <p id="screening-feedback" aria-live="polite"></p>
+  </section>
+
+  <script src="wa7.js" defer></script>
+</body>
+</html>

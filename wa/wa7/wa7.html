@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Club</title>
+    <link rel="stylesheet" href="wa7.css">
+</head>
+<body>
+    <nav class="main-nav" aria-label="Main Navigation">
+        <div class="nav-brand">Movie Club</div>
+        <button class="nav-toggle" 
+        aria-controls="main-menu"
+        aria-expanded="false"
+        aria-label="Toggle navigation menu">
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu" id="main-menu">
+            <li><a href="wa7.html">Home</a></li>
+            <li><a href="wa_7featured.html">Featured Movies</a></li>
+            <li><a href="wa7_upcoming.html">Upcoming Screenings</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <button onclick="setTheme('light')">Light Mode</button>
+            <button onclick="setTheme('dark')">Dark Mode</button>
+        </div>
+    </nav>
+
+    <main class="grid-home">
+        <header class="hero">
+            <h1>Welcome to Movie Club!</h1>
+            <p>Discover local screenings, reviews, and community favorites.</p>
+        </header>
+
+        <section>
+            <h2>Critcal Reflection & Analysis</h2>
+            <p>
+                The design of my Movie Club website was guided by the specific needs of the local movie community. Using CSS Grid, I created distinct layouts for 
+                the featured movies and upcoming screenings pages, organizing content to prioritize clarity and accessibility. The featured movies page allows 
+                users to browse and filter films by genre, while the upcoming screenings page highlights events with clear headings, a selectable list, and 
+                feedback. These grids provide a logical reading flow, making it easier for users to find relevant information and take action without being 
+                overwhelmed. Accessibility considerations, such as keyboard navigation, aria-live feedback, and high-contrast selections, ensure the site is 
+                inclusive for users with different abilities.
+            </p>
+            
+            <p>
+                The interactive JavaScript features were carefully chosen to serve community needs rather than for visual flair. The genre filter on the featured 
+                movies page helps users quickly find content relevant to their interests, and the selectable upcoming screenings list provides immediate feedback 
+                while allowing deselection. User testing revealed that spacing, selection feedback, and clarity of interactive elements were critical, leading to 
+                adjustments that improved usability and visual clarity. Feedback also challenged my initial assumptions about subtle design cues, showing that 
+                clear, unambiguous interactions are more effective in a community-focused site. Given more time, I would explore additional personalization 
+                features, such as saving selections or notifications, while maintaining accessibility and usability.
+            </p>
+                Privacy and user agency were key considerations throughout development. No personal user data is stored; all interactions occur locally, giving 
+                users full control over filtering and selecting screenings. The design also acknowledges potential biases, such as genre selection or the order of 
+                events, and highlights the importance of representing diverse community interests in future iterations. Overall, the project demonstrates how 
+                thoughtful technical decisions (like grid layouts, interactive functionality, and accessibility) can create a meaningful and usable experience, 
+                emphasizing that web development should prioritize serving real community needs while maintaining user trust and empowerment.
+            <p>
+
+            </p>
+        </section>
+    </main>
+    
+    <script src="wa7.js" defer></script>
+</body>
+</html>
