@@ -2,9 +2,21 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
 }
 
-h1, h2, h3 {
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin: 0.5rem 0;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin: 0.5rem 0;
+}
+
+h3 {
+  font-size: clamp(1rem, 3vw, 1.5rem);
   margin: 0.5rem 0;
 }
 
@@ -18,7 +30,7 @@ h1, h2, h3 {
 }
 .nav-brand { 
     font-weight: 700; 
-    font-size: 1.2rem; 
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .nav-menu { 
@@ -27,6 +39,8 @@ h1, h2, h3 {
     list-style: none; 
     margin: 0; 
     padding: 0; 
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    padding: clamp(0.3rem, 0.8vw, 0.75rem) clamp(0.5rem, 1vw, 1rem);
 }
 
 .nav-menu a { 
@@ -82,12 +96,39 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
+  container-type: inline-size;
+}
+
+@container (max-width: 500px) {
+  .movie-card {
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    padding: 0.5rem;
+  }
+}
+
+@container (min-width: 501px) and (max-width: 800px) {
+  .movie-card {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    padding: 0.75rem;
+  }
+}
+
+@container (min-width: 801px) {
+  .movie-card {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    padding: 1rem;
+  }
 }
 
 .movie-card { 
     background: #e0e0ff; 
     padding: 0.75rem; 
     border-radius: 6px; 
+    /* font-size: clamp(1rem, 3vw, 1.5rem); */
+}
+
+.movie-card p {
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
 }
 
 #genre-filter { 
@@ -233,4 +274,52 @@ body.dark .theme-toggle button:hover {
   .nav-menu.show { 
         display: flex; 
     }
+}
+
+/* Privacy Popup */
+.privacy-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f9f9f9;
+  color: #000;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: clamp(250px, 25vw, 350px);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  line-height: 1.4;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.privacy-popup button {
+  background-color: #86c8df;
+  border: none;
+  padding: clamp(0.3rem, 0.8vw, 0.6rem) clamp(0.5rem, 1vw, 1rem);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+}
+
+.privacy-popup button:hover {
+  background-color: #6bb5ce;
+}
+
+/* Dark mode compatibility */
+body.dark .privacy-popup {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
+}
+
+body.dark .privacy-popup button {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+body.dark .privacy-popup button:hover {
+  background-color: #3a3a3a;
 }
