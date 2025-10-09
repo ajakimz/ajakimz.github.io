@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Club | Upcoming Screenings</title>
+  <link rel="stylesheet" href="movie-club.css">
+</head>
+<body>
+  <nav class="main-nav" aria-label="Main Navigation">
+    <div class="nav-brand">Movie Club</div>
+    <button class="nav-toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+    <ul class="nav-menu" id="main-menu">
+      <li><a href="movie-club.html">Home</a></li>
+      <li><a href="movie-club-featured.html">Featured Movies</a></li>
+      <li><a href="movie-club-upcoming.html" aria-current="page">Upcoming Screenings</a></li>
+    </ul>
+    <div class="theme-toggle">
+            <button onclick="setTheme('light')">Light Mode</button>
+            <button onclick="setTheme('dark')">Dark Mode</button>
+        </div>
+  </nav>
+
+  <section id="resources" class="grid-resources">
+    <h2>Upcoming Screenings</h2>
+    <ul class="screenings">
+      <li tabindex="0">Screening 1: Action Movie - 10/01/25</li>
+      <li tabindex="0">Screening 2: Comedy Movie - 10/05/25</li>
+      <li tabindex="0">Screening 3: Drama Movie - 10/10/25</li>
+    </ul>
+    <p id="screening-feedback" aria-live="polite"></p>
+  </section>
+
+   <aside id="privacy-popup" class="privacy-popup" aria-label="Privacy notice">
+        <p>We use local storage to remember your theme and filters to improve your Movie Club experience. 
+        Your data is stored only in your browser and never shared.</p>
+        <div class="privacy-buttons">
+            <button id="continue-privacy">Continue</button>
+            <button id="clear-data">Clear My Data</button>
+        </div>
+    </aside>
+
+  <script src="movie-club.js" defer></script>
+</body>
+</html>
