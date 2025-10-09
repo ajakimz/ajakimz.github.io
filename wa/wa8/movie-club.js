@@ -182,3 +182,26 @@ if (screenings.length > 0) {
     });
 }
 });
+
+const expandBtn = document.querySelector('.expand-btn');
+        const details = document.querySelector('.details-hidden');
+        let info = false;
+
+        expandBtn.addEventListener('click', showInfo);
+
+        function showInfo() {
+            // console.log("hi");
+            // alert("this is an alert");
+            if (info == false) {
+                details.style.display = "flex";
+                expandBtn.textContent = "-";
+                expandBtn.setAttribute("aria-label", "Collapse card");
+                info = true;
+            }
+            else {
+                details.style.display = "none";
+                expandBtn.textContent = "+";
+                expandBtn.setAttribute("aria-label", "Expand card");
+                info = false;
+            }
+        }

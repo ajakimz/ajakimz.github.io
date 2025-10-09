@@ -32,28 +32,33 @@
     <main class="grid-home">
         <header class="hero">
             <h1>Welcome to Movie Club!</h1>
-            <p>Discover local screenings, reviews, and community favorites.</p>
+            <p>Discover upcoming screenings, explore featured films, and connect with your local movie community!</p>
         </header>
 
         <section>
-            <h2>Critcal Analysis</h2>
-            <p>The implementation of localStorage in my Movie Club site highlights the power dynamics that exist between digital platforms and their users. By storing preferences such as theme selection, genre filters, and selected screenings, the site gains the ability to shape the user experience and ensures continuity across sessions and devices. This convenience, however, also grants the platform implicit authority over how users interact with the content, subtly influencing engagement patterns and prioritizing persisted choices over fresh exploration. Recognizing this dynamic is crucial as even a small amount of stored data can create expectations for consistent interactions, which may inadvertently privilege certain content or perspectives.</p>
-            <p>The act of collecting and persisting user data raises important questions about inclusion and accessibility. For instance, users who disable cookies or decline local storage may experience a reduced level of customization, potentially creating an unequal experience. Similarly, the reliance on browser-based storage means that users switching devices or browsers may not have their preferences maintained, highlighting a limitation in equitable access. Thoughtful design choices, such as offering a clear “Clear My Data” option and a privacy popup explaining what is stored, help mitigate these disparities by empowering users to control their information.</p>
-            <p>As the site scales, additional ethical considerations emerge. Integrating external APIs for movie data or expanding user accounts could introduce new privacy risks, requiring transparent communication about what is collected, how it is used, and who has access. Also, long-term storage of user interactions could create profiling opportunities, emphasizing the importance of defining retention limits and providing opt-out mechanisms. Overall, this implementation underscores that data persistence, while beneficial for user experience, comes with a responsibility to prioritize transparency, autonomy, and equitable access. By incorporating clear privacy controls and responsive, device-agnostic design, the site not only improves usability but also demonstrates ethical stewardship of user data.</p>
-        </section>
-
-        <section>
-            <h2>Privacy Statement</h2>
-            <p>Movie Club uses your browser’s local storage to remember your selected theme (light or dark), genre filters, and any upcoming screening selections. This information is stored only on your device and is never shared with third parties. We collect this data to improve your experience, allowing the site to maintain your preferences across sessions and devices, making navigation and content discovery easier and more personalized.</p>
-            <p>Your data remains stored until you choose to clear it, either by using the “Clear My Data” button in the privacy popup or by manually clearing your browser’s local storage.</p>
-            <p>At any time, you can manage your stored data:</p>
-            <ul>
-                <li>Continue: Keep your current preferences saved for future visits.</li>
-                <li>Clear My Data: Delete all saved preferences and reset the site to default settings.</li>
-            </ul>
-            <p>By offering these controls and being transparent about what is stored, how long it is stored, and why it is collected, Movie Club ensures you remain in full control of your browsing experience.</p>
+            <h2>About</h2>
+            <p>Movie Club is your local hub for film lovers. Whether you enjoy blockbusters, indie gems, or classic cinema, our community brings moviegoers together through screenings, discussions, and shared experiences.</p>
         </section>
     </main>
+
+    <footer class="card">
+            <div class="card-header">
+                <h3>Privacy Statement</h3>
+                <button class="expand-btn" aria-label="Expand card">+</button>
+            </div>
+            <div class="card-content">
+                <div class="details-hidden">
+                    <p>Movie Club uses your browser’s local storage to remember your selected theme (light or dark), genre filters, and any upcoming screening selections. This information is stored only on your device and is never shared with third parties. We collect this data to improve your experience, allowing the site to maintain your preferences across sessions and devices, making navigation and content discovery easier and more personalized.</p>
+                    <p>Your data remains stored until you choose to clear it, either by using the “Clear My Data” button in the privacy popup or by manually clearing your browser’s local storage.</p>
+                    <p>At any time, you can manage your stored data:</p>
+                    <ul>
+                        <li>Continue: Keep your current preferences saved for future visits.</li>
+                        <li>Clear My Data: Delete all saved preferences and reset the site to default settings.</li>
+                    </ul>
+                    <p>By offering these controls and being transparent about what is stored, how long it is stored, and why it is collected, Movie Club ensures you remain in full control of your browsing experience.</p>
+                </div>
+            </div>
+        </footer>
 
     <aside id="privacy-popup" class="privacy-popup" aria-label="Privacy notice">
         <p>We use local storage to remember your theme and filters to improve your Movie Club experience. 
