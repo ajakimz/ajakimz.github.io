@@ -151,6 +151,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// RSVP Buttons
+document.addEventListener('DOMContentLoaded', () => {
+  const rsvpButtons = document.querySelectorAll('.rsvp-btn');
+  const feedback = document.getElementById('screening-feedback');
+
+  rsvpButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const movieRow = button.closest('tr');
+      const movieName = movieRow.querySelector('td:nth-child(2)').textContent;
+
+      if (movieRow.classList.contains('rsvped')) {
+        // Un-RSVP
+        movieRow.classList.remove('rsvped');
+        button.textContent = 'RSVP';
+        feedback.textContent = '';
+
+        // Re-enable all other buttons
+        rsvpButtons.forEach(btn => btn.disabled = false);
+
+      } else {
+        // RSVP current row
+        movieRow.classList.add('rsvped');
+        feedback.textContent = `You RSVP'd for: ${movieName}`;
+
+        // Disable all other buttons
+        rsvpButtons.forEach(btn => {
+          if (btn !== button) btn.disabled = true;
+        });
+      }
+    });
+  });
+});
+
 // ==============================
 // PRIVACY STATEMENT EXPAND/COLLAPSE
 // ==============================

@@ -105,10 +105,17 @@ h3 { font-size: clamp(1rem, 3vw, 1.5rem); }
    MOVIE DISPLAY (ROW VIEW)
 ============================= */
 .featured-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   padding: 1.5rem;
+}
+
+/* Responsive: 1 movie per row on small screens */
+@media (max-width: 768px) {
+  .featured-list {
+    grid-template-columns: 1fr; /* switch to 1 column */
+  }
 }
 
 /* Each movie in one horizontal row */
@@ -215,6 +222,136 @@ h3 { font-size: clamp(1rem, 3vw, 1.5rem); }
 #screening-feedback { 
   grid-area: feedback; 
   font-weight: bold; 
+}
+
+/* =============================
+   SCREENINGS TABLE
+============================= */
+.screenings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+}
+
+.screenings-table th,
+.screenings-table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.screenings-table th {
+  background-color: #86c8df;
+  color: #000;
+  font-weight: bold;
+}
+
+.screenings-table tbody tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.screenings-table tbody tr:hover {
+  background-color: #cee9f2;
+}
+
+.screenings-table button.rsvp-btn {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #86c8df;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.screenings-table button.rsvp-btn:hover {
+  background-color: #6bb5ce;
+}
+
+/* Dark mode */
+body.dark .screenings-table th {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+body.dark .screenings-table tbody tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+body.dark .screenings-table tbody tr:hover {
+  background-color: #333;
+}
+
+body.dark .screenings-table button.rsvp-btn {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+body.dark .screenings-table button.rsvp-btn:hover {
+  background-color: #555;
+}
+
+/* Responsive table for small screens */
+@media (max-width: 600px) {
+  .screenings-table,
+  .screenings-table thead,
+  .screenings-table tbody,
+  .screenings-table th,
+  .screenings-table td,
+  .screenings-table tr {
+    display: block;
+  }
+
+  .screenings-table thead tr {
+    display: none;
+  }
+
+  .screenings-table tbody tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.5rem;
+  }
+
+  .screenings-table td {
+    padding: 0.25rem 0.5rem;
+    text-align: right;
+    position: relative;
+  }
+
+  .screenings-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .screenings-table button.rsvp-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+/* Highlight row when RSVP'd */
+.screenings-table tbody tr.rsvped {
+  background-color: #b6deeb; /* light blue highlight */
+  color: #000;
+}
+
+body.dark .screenings-table tbody tr.rsvped {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+.screenings-table tbody tr.rsvped button.rsvp-btn {
+  background-color: #6bb5ce; /* slightly darker for button */
+  color: #000;
+}
+
+body.dark .screenings-table tbody tr.rsvped button.rsvp-btn {
+  background-color: #555;
+  color: #fff;
 }
 
 /* =============================
@@ -392,4 +529,80 @@ button {
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
+}
+
+/* =============================
+   FOOTER PRIVACY STATEMENT CARD
+============================= */
+footer.card {
+  background-color: #f0f0f0;
+  color: #000;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 900px; /* card width */
+  margin: 2rem auto; /* center card on page */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+footer.card .card-header {
+  display: flex;
+  justify-content: center; /* center header + button horizontally */
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+footer.card .expand-btn {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: 2px solid black;
+  background: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+footer.card .expand-btn:hover {
+  background: lightgray;
+}
+
+footer.card .card-content {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center; /* centers inner content */
+}
+
+footer.card .details-hidden {
+  display: none; /* hidden by default */
+  flex-direction: column;
+  align-items: flex-start; /* left-align text */
+  text-align: left;
+  gap: 0.75rem;
+  max-width: 800px; /* keeps content from being too wide */
+}
+
+footer.card .details-hidden p,
+footer.card .details-hidden ul {
+  margin: 0;
+  line-height: 1.5;
+}
+
+footer.card .details-hidden ul {
+  padding-left: 1.2rem;
+}
+
+body.dark footer.card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(255,255,255,0.15);
+}
+
+body.dark footer.card .expand-btn {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+body.dark footer.card .expand-btn:hover {
+  background-color: #3a3a3a;
 }
