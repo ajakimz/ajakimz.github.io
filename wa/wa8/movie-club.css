@@ -316,7 +316,7 @@ body.dark .screenings-table button.rsvp-btn:hover {
 
   .screenings-table td {
     padding: 0.25rem 0.5rem;
-    text-align: right;
+    text-align: left;
     position: relative;
   }
 
