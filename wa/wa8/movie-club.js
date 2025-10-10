@@ -1,3 +1,6 @@
+// ==============================
+// NAVIGATION MENU TOGGLE
+// ==============================
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.getElementById('main-menu');
@@ -22,42 +25,122 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+});
 
+// ==============================
+// THEME MANAGEMENT
+// ==============================
+function setTheme(theme) {
+  localStorage.setItem('userTheme', theme);
+  document.body.className = theme;
+}
+
+window.addEventListener('load', function() {
+  const savedTheme = localStorage.getItem('userTheme') || 'light';
+  document.body.className = savedTheme;
+});
+
+// ==============================
+// PRIVACY POPUP CONTROLS
+// ==============================
+document.addEventListener('DOMContentLoaded', () => {
+  const privacyPopup = document.getElementById('privacy-popup');
+  const continuePrivacy = document.getElementById('continue-privacy');
+  const clearData = document.getElementById('clear-data');
+
+  // Handle privacy popup buttons
+  if (privacyPopup) {
+    continuePrivacy.addEventListener('click', () => {
+      privacyPopup.style.display = 'none';
+      localStorage.setItem('privacyAccepted', 'true');
+    });
+
+    clearData.addEventListener('click', () => {
+      const confirmClear = confirm(
+        "Are you sure you want to clear your saved data (themes, filters, etc.)?\nThis will reset your site preferences."
+      );
+      if (confirmClear) {
+        localStorage.clear();
+        localStorage.setItem('privacyAccepted', 'true');
+        localStorage.setItem('dataCleared', 'true');
+        document.body.className = 'light';
+        alert('Your data has been cleared.');
+      }
+    });
+  }
+});
+
+// ==============================
+// GENRE FILTER FOR FEATURED MOVIES
+// ==============================
+document.addEventListener('DOMContentLoaded', () => {
   const filterSelect = document.getElementById('genre-filter');
-  const movieCards = document.querySelectorAll('.movie-card');
+  const movieItems = document.querySelectorAll('.movie-item');
 
-  if (filterSelect && movieCards.length > 0) {
+  if (filterSelect && movieItems.length > 0) {
+    // Load saved filter from localStorage
+    const savedFilter = localStorage.getItem('genreFilter');
+    if (savedFilter) filterSelect.value = savedFilter;
+
+    // Apply saved filter on load
+    movieItems.forEach(item => {
+      if (savedFilter && savedFilter !== 'all' && item.dataset.genre !== savedFilter) {
+        item.style.display = 'none';
+      }
+    });
+
+    // Apply and save filter on change
     filterSelect.addEventListener('change', (e) => {
       const genre = e.target.value;
-      movieCards.forEach(card => {
-        if (genre === 'all' || card.dataset.genre === genre) {
-          card.style.display = '';
+      localStorage.setItem('genreFilter', genre);
+
+      movieItems.forEach(item => {
+        if (genre === 'all' || item.dataset.genre === genre) {
+          item.style.display = '';
         } else {
-          card.style.display = 'none';
+          item.style.display = 'none';
         }
       });
     });
   }
+});
 
+// ==============================
+// SCREENING SELECTION (UPCOMING PAGE)
+// ==============================
+document.addEventListener('DOMContentLoaded', () => {
   const screenings = document.querySelectorAll('.screenings li');
   const feedback = document.getElementById('screening-feedback');
   let selected = null;
 
   if (screenings.length > 0) {
+    const savedScreening = localStorage.getItem('selectedScreening');
+
+    // Restore saved selection
     screenings.forEach(item => {
+      if (savedScreening && savedScreening === item.textContent) {
+        item.classList.add('selected');
+        selected = item;
+        if (feedback) feedback.textContent = `You selected: ${item.textContent}`;
+      }
+
+      // Save new selection on click
       item.addEventListener('click', () => {
         if (selected === item) {
           item.classList.remove('selected');
           selected = null;
-          feedback.textContent = '';
+          if (feedback) feedback.textContent = '';
+          localStorage.removeItem('selectedScreening');
         } else {
           screenings.forEach(li => li.classList.remove('selected'));
           item.classList.add('selected');
           selected = item;
-          feedback.textContent = `You selected: ${item.textContent}`;
+          if (feedback) feedback.textContent = `You selected: ${item.textContent}`;
+          localStorage.setItem('selectedScreening', item.textContent);
         }
       });
 
+      // Keyboard accessibility
       item.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -68,140 +151,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Save user's theme choice
-function setTheme(theme) {
-    localStorage.setItem('userTheme', theme);
-    document.body.className = theme;
-}
-
-// Load saved theme on page load
-window.addEventListener('load', function() {
-    const savedTheme = localStorage.getItem('userTheme') || 'light';
-    document.body.className = savedTheme;
-});
-
+// ==============================
+// PRIVACY STATEMENT EXPAND/COLLAPSE
+// ==============================
 document.addEventListener('DOMContentLoaded', () => {
-  const privacyPopup = document.getElementById('privacy-popup');
-  const continuePrivacy = document.getElementById('continue-privacy');
-  const clearData = document.getElementById('clear-data');
+  const expandBtn = document.querySelector('.expand-btn');
+  const details = document.querySelector('.details-hidden');
+  let info = false;
 
-  if (localStorage.getItem('privacyAccepted') === 'true' &&
-      localStorage.getItem('dataCleared') === 'true') {
-      // Do not reload any saved data
-      document.body.className = 'light';
-  } else {
-    // Load theme, filter, etc.
+  if (expandBtn && details) {
+    expandBtn.addEventListener('click', () => {
+      if (!info) {
+        details.style.display = "flex";
+        expandBtn.textContent = "-";
+        expandBtn.setAttribute("aria-label", "Collapse card");
+        info = true;
+      } else {
+        details.style.display = "none";
+        expandBtn.textContent = "+";
+        expandBtn.setAttribute("aria-label", "Expand card");
+        info = false;
+      }
+    });
   }
-
-  continuePrivacy.addEventListener('click', () => {
-    privacyPopup.style.display = 'none';
-    localStorage.setItem('privacyAccepted', 'true');
-  });
-
-  clearData.addEventListener('click', () => {
-    const confirmClear = confirm(
-      "Are you sure you want to clear your saved data (themes, filters, etc.)?\nThis will reset your site preferences."
-    );
-
-    if (confirmClear) {
-        localStorage.clear();
-        localStorage.setItem('privacyAccepted', 'true');
-        localStorage.setItem('dataCleared', 'true'); // Track that user wants data cleared
-        document.body.className = 'light';
-        alert('Your data has been cleared.');
-    }
 });
-
-const filterSelect = document.getElementById('genre-filter');
-const movieCards = document.querySelectorAll('.movie-card');
-
-if (filterSelect && movieCards.length > 0) {
-    // Load saved filter
-    const savedFilter = localStorage.getItem('genreFilter');
-    if (savedFilter) filterSelect.value = savedFilter;
-
-    movieCards.forEach(card => {
-        if (savedFilter && savedFilter !== 'all' && card.dataset.genre !== savedFilter) {
-            card.style.display = 'none';
-        }
-    });
-
-    // Save filter on change
-    filterSelect.addEventListener('change', (e) => {
-        const genre = e.target.value;
-        localStorage.setItem('genreFilter', genre);
-
-        movieCards.forEach(card => {
-            if (genre === 'all' || card.dataset.genre === genre) {
-                card.style.display = '';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    });
-}
-
-// Persist selected screening
-const screenings = document.querySelectorAll('.screenings li');
-const feedback = document.getElementById('screening-feedback');
-let selected = null;
-
-if (screenings.length > 0) {
-    const savedScreening = localStorage.getItem('selectedScreening');
-
-    screenings.forEach(item => {
-        // Restore selection
-        if (savedScreening && savedScreening === item.textContent) {
-            item.classList.add('selected');
-            selected = item;
-            feedback.textContent = `You selected: ${item.textContent}`;
-        }
-
-        // Save selection on click
-        item.addEventListener('click', () => {
-            if (selected === item) {
-                item.classList.remove('selected');
-                selected = null;
-                feedback.textContent = '';
-                localStorage.removeItem('selectedScreening');
-            } else {
-                screenings.forEach(li => li.classList.remove('selected'));
-                item.classList.add('selected');
-                selected = item;
-                feedback.textContent = `You selected: ${item.textContent}`;
-                localStorage.setItem('selectedScreening', item.textContent);
-            }
-        });
-
-        item.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                item.click();
-            }
-        });
-    });
-}
-});
-
-const expandBtn = document.querySelector('.expand-btn');
-        const details = document.querySelector('.details-hidden');
-        let info = false;
-
-        expandBtn.addEventListener('click', showInfo);
-
-        function showInfo() {
-            // console.log("hi");
-            // alert("this is an alert");
-            if (info == false) {
-                details.style.display = "flex";
-                expandBtn.textContent = "-";
-                expandBtn.setAttribute("aria-label", "Collapse card");
-                info = true;
-            }
-            else {
-                details.style.display = "none";
-                expandBtn.textContent = "+";
-                expandBtn.setAttribute("aria-label", "Expand card");
-                info = false;
-            }
-        }
