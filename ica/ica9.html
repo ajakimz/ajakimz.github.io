@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ICA9</title>
     <style>
-        /* .box {
+        body {
+            background-color: #f7f9fc;
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            text-align: center;
+            color: #333;
+        }
+
+        .demo-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        /* ---------- BOX 1: MOVING ANIMATION ---------- */
+        .box {
             height: 200px;
             width: 200px;
             border: 5px black solid;
@@ -14,23 +36,9 @@
             animation-duration: 4s;
             animation-iteration-count: infinite;
             position: relative;
-        } */
-
-        /* .another-box {
-            height: 200px;
-            width: 200px;
-            border: 5px black solid;
-            background-color: blue;
-            transition-property: width height;
-            transition-duration: 1s;
         }
 
-        .another-box:hover {
-            width: 500px;
-            height: 500px;
-        } */
-
-        /* @keyframes moving-box {
+        @keyframes moving-box {
             from {
                 left: 0px;
                 top: 0px;
@@ -38,20 +46,20 @@
             }
 
             25% {
-                left: 500px;
+                left: 200px;
                 top: 0px;
                 background-color: lightblue;
             }
 
             50% {
-                left: 500px;
-                top: 500px;
+                left: 200px;
+                top: 200px;
                 background-color: lightgreen;
             }
 
             75% {
                 left: 0px;
-                top:500px;
+                top:200px;
                 background-color: lightgoldenrodyellow;
             }
 
@@ -60,43 +68,89 @@
                 top: 0px;
                 background-color: lightcoral;
             }
-        } */
+        }
 
-        .login-button {
+         /* ---------- BOX 2: TRANSITION HOVER ---------- */
+        .another-box {
+            height: 200px;
             width: 200px;
-            height: 100px;
-            border: 1px black solid;
-            /* border-radius: 10px; */
-            background-color: lightblue;
+            border: 5px black solid;
+            background-color: blue;
             transition-property: width height;
-            animation-duration: 1s;
-            /* animation-name: button-grow; */
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out;
         }
 
-        .login-button:hover {
-            width: 225px;
-            height: 125px;
+        .another-box:hover {
+            width: 500px;
+            height: 500px;
         }
 
-        /* @keyframes button-grow {
-            from {
-                width: 100px;
-                height: 50px;
-            }
+        /* ---------- BUTTON MICRO-INTERACTION ---------- */
+        .cta-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 
+                transform 0.3 ease-in-out,
+                box-shadow 0.3s ease-in-out,
+                background-color 0.3 ease-in-out;
+            box-shadow: 0 4px 8px rgba(0,0,0,0,.2);
+        }
 
-            to {
-                width: 125px;
-                height: 75px;
+        .cta-button:hover {
+            transform: scale(1.08);
+            background-color: #45a049;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .cta-button.attention {
+            animation: pulse 2s infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cta-button,
+            .cta-button:hover,
+            .cta-button.attention {
+                transition: none;
+                animation: none;
+                transform: none;
             }
-        } */
+        }
     </style>
 </head>
 <body>
-    <div class="box"></div>
+    <h2>Animation Example 1: Moving Box</h2>
+    <div class="demo-section">
+        <div class="box"></div>
+        <p>This box continuously moves around and changes color using keyframe animation.</p>
+    </div>
 
-    <div class="another-box"></div>
+    <h2>Animation Example 2: Expanding Box on Hover</h2>
+    <div class="demo-section">
+        <div class="another-box"></div>
+        <p>This box grows in size when hovered, showing a CSS transition effect.</p>
+    </div>
 
-    <div class="login-button"></div>
-    
+    <h2>Micro-Interaction Example 3: Persuasive CTA Button</h2>
+    <div class="demo-section">
+        <button class="cta-button attention">Sign Up Now</button>
+        <p>This button encourages user interaction through color, scale, and motion while respecting accessibility settings.</p>
+    </div>
 </body>
 </html>
