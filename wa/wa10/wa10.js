@@ -8,7 +8,7 @@ let currentAlbum = {
 };
 
 // Array of some artist names to randomize searches
-const artists = ["Taylor Swift", "Drake", "Billie Eilish", "Coldplay", "Ariana Grande", "Still Woozy", "Kendrick Lamar", "The Weeknd", "Olivia Rodrigo", "Beyonce", "Bruno Mars", "Lady Gaga", "Bad Bunny", "SZA", "Post Malone", "Doja Cat", "Katy Perry", "Tate McRae", "Black Eyed Peas", "Khalid", "Artic Monkeys", "TV Girl"];
+const artists = ["Drake", "Billie Eilish", "Coldplay", "Ariana Grande", "Still Woozy", "Kendrick Lamar", "The Weeknd", "Olivia Rodrigo", "Bruno Mars", "Lady Gaga", "Bad Bunny", "SZA", "Post Malone", "Doja Cat", "Tate McRae", "Black Eyed Peas", "Khalid", "Artic Monkeys", "TV Girl", "ILLIT", "Tomorrow X Together"];
 
 async function newAlbum() {
   try {
