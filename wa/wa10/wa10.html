@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WA 10</title>
+    <link rel="stylesheet" href="wa10.css">
+</head>
+<body>
+    <div class="app">
+        <header>Guess the Album</header>
+        <section class="quotes">
+            <div class="instructions">Guess the album and artist based on the cover below!</div>
+            <div id="album-cover-container">
+                <img id="album-cover" src="" alt="Album cover will appear here">
+            </div>
+            <div class="quote-text" id="js-answer-text"></div>
+        </section>
+        <section class="controls">
+            <button type="button" id="js-new-quote" class="new-quote button">Generate Album</button>
+            <button type="button" id="js-tweet" class="twitter button">Reveal Answer</button>
+        </section>
+        <section class="description">
+            <p>
+                <strong>Extension Explanation:</strong><br>
+                For my quote machine extension, I created a “Guess the Album” generator using the iTunes Search API. Each click shows a random album cover, and users have to guess the artist or album name before revealing the answer. It combines music data with a fun guessing-game format.
+            </p>
+            <p>
+                <strong>API in My Critique Project:</strong><br>
+                In my critique project, I could imagine using an API to bring in interactive or visual data. For example, pulling accessibility stats or user interface data from a public API could help visualize how inclusive certain design systems are.
+            </p>
+        </section>
+    </div>
+    <script src="wa10.js"></script>
+</body>
+</html>
