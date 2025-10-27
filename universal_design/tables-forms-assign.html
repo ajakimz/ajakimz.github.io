@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Tables, Forms, Tabbed Browsing, and Screen Reading</title>
+        <link href="css/table-forms-assign.css" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <!-- Google Material Icons (hidden from screen readers with aria-hidden) -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+    <!-- /* =============================
+                SKIP LINK
+        ============================= */ -->
+        <a class="skip-link" href="#main">Skip to main content</a>
+
+        <header role="banner">
+            <a class="brand" aria-label="Community Learning Hub homepage">
+                <span class="material-icons" aria-hidden="true" style="font-size:28px; color:var(--accent);">school</span>
+                <h1>Community Learning Hub</h1>
+            </a>
+
+            <nav role="navigation" aria-label="Primary navigation">
+                <ul class="menu">
+                    <li>
+                        <a href="#events-heading" class="nav-link">Events</a>
+                    </li>
+                    <li>
+                        <a href="#register-heading" class="nav-link">Register</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main" role="main" aria-labelledby="main-heading">
+            <div class="intro">
+                <section class="card" aria-labelledby="main-heading">
+                    <h2 id="main-heading">Upcoming Community Workshops</h2>
+                    <p class="lead">We run hands-on workshops to make learning accessible to everyone. Below you will find details for our next three events and a registration form for the one-weekend intensive.</p>
+                </section>
+
+                <aside class="card" aria-labelledby="support-heading" role="complementary">
+                    <h3 id="support-heading">Support & Accessibility</h3>
+                    <p class="lead">Need an accommodation? We offer live captioning, materials in large print, and one-on-one support during sessions. Use the registration form to request accommodations.</p>
+                </aside>
+            </div>
+
+            <div class="grid-2">
+                <article class="card" aria-labelledby="events-heading">
+                    <h2 id="events-heading">Event Details</h2>
+
+                    <section aria-labelledby="event-list-heading">
+                        <h3 id="event-list-heading">Featured events (next 30 days)</h3>
+
+                        <table aria-describedby="table-desc">
+                            <caption>Event schedule and locations</caption>
+                            <div id="table-desc" class="sr-only">This table lists the next three events, their dates, times, venues, and whether they are free or ticketed.</div>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Event</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Venue</th>
+                                    <th scope="col">Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><time datetime="2025-11-08">Nov 8, 2025</time></th>
+                                    <td>Intro to UX Research — Hands-on</td>
+                                    <td>10:00 AM &mdash; 1:00 PM</td>
+                                    <td>Eastside Community Center</td>
+                                    <td>Free</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><time datetime="2025-11-15">Nov 15, 2025</time></th>
+                                    <td>Weekend Coding Bootcamp (Beginners)</td>
+                                    <td>9:00 AM &mdash; 4:00 PM</td>
+                                    <td>Central Library, Room B</td>
+                                    <td>$25 (materials)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><time datetime="2025-11-22">Nov 22, 2025</time></th>
+                                    <td>Community Portfolio Review</td>
+                                    <td>5:30 PM &mdash; 8:00 PM</td>
+                                    <td>Online — Zoom</td>
+                                    <td>Free (RSVP)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>If you need printed schedules or an accessible version of this table emailed to you, contact <a href="#">access@communityhub.org</a>.</p>
+                    </section>
+
+                    <section aria-labelledby="faq-heading" style="margin-top:1rem;">
+                        <h3 id="faq-heading">Frequently asked questions</h3>
+                        <details>
+                            <summary>What is the refund policy for paid events?</summary>
+                            <p>Paid event fees are refundable up to 7 days before the event. Contact our registration team for details.</p>
+                        </details>
+                        <details>
+                            <summary>How do I request a sign language interpreter?</summary>
+                            <p>Use the accommodations field on the registration form or email accessibility requests at least 10 business days in advance.</p>
+                        </details>
+                    </section>
+                </article>
+
+                <!-- Registration / Accessible Form -->
+                <aside class="card" aria-labelledby="register-heading">
+                    <h2 id="register-heading">Register for Weekend Coding Bootcamp</h2>
+                    <form id="register" action="#" method="post" aria-describedby="form-instructions" novalidate>
+                        <p id="form-instructions" class="hint">We will only use your information to register you for the workshop and contact you about accessibility needs.</p>
+
+                        <div class="field">
+                            <label for="fullname">Full name</label>
+                            <input id="fullname" name="fullname" type="text" autocomplete="name" required aria-required="true" />
+                            <div id="fullname-hint" class="hint">Enter your first and last name.</div>
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email address</label>
+                            <input id="email" name="email" type="email" autocomplete="email" required aria-required="true"
+                                aria-describedby="email-hint" />
+                            <div id="email-hint" class="hint">We'll email your confirmation and ticket.</div>
+                        </div>
+
+                        <div class="field">
+                            <label for="phone">Phone (optional)</label>
+                            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
+                                aria-describedby="phone-hint" />
+                            <div id="phone-hint" class="hint">Add a number if you want SMS reminders.</div>
+                        </div>
+
+                        <fieldset>
+                            <legend>Choose your attendance option</legend>
+                            <div>
+                                <input type="radio" id="inperson" name="attendance" value="inperson" checked>
+                                <label for="inperson">In-person (Central Library)</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="online" name="attendance" value="online">
+                                <label for="online">Online (Zoom)</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Accommodations & accessibility</legend>
+                            <label for="accom">Please describe any accommodations you need</label>
+                            <textarea id="accom" name="accommodations" rows="4" aria-describedby="accom-hint" placeholder="For example: American Sign Language interpreter, large print handouts, in-person assistant."></textarea>
+                            <div id="accom-hint" class="hint">We will contact you to confirm feasibility and details.</div>
+                        </fieldset>
+
+                        <div class="field">
+                            <label for="tickets">Number of tickets</label>
+                            <select id="tickets" name="tickets" aria-label="Number of tickets" required>
+                                <option value="">Select...</option>
+                                <option value="1">1 — Individual</option>
+                                <option value="2">2 — Bring a friend</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="howheard">How did you hear about us?</label>
+                            <input id="howheard" name="howheard" type="text" placeholder="e.g., Instagram, friend, campus flyer" />
+                        </div>
+
+                        <!-- Material icon on button (decorative) -->
+                        <div class="actions">
+                            <button type="submit" class="primary">
+                                <span class="material-icons" aria-hidden="true" style="vertical-align:middle; font-size:18px;">how_to_reg</span>
+                                Register
+                            </button>
+                            <button type="reset" class="secondary">Reset</button>
+                            <p class="hint" style="margin-left:auto; font-size:.9rem;">By submitting you agree to our <a href="/terms">terms</a>.</p>
+                        </div>
+                    </form>
+                </aside>
+            </div>
+
+            <section class="card" id="about" aria-labelledby="about-heading" style="margin-top:1rem;">
+                <h2 id="about-heading">About the Community Learning Hub</h2>
+                <p>Founded in 2018, the Hub connects learners with local instructors to build practical skills. Our mission is to remove barriers to learning through low-cost events, partnership scholarships, and accessible materials.</p>
+
+                <figure style="margin-top:.75rem;">
+                    <img 
+                    src="/universal_design/photos/people-watching-presentor.jpg" 
+                    alt="People watching a presenter giving a talk with a projector screen in a community room" 
+                    style="width:100%; border-radius:8px; display:block;">
+                    <figcaption style="font-size:.9rem; color:var(--muted); margin-top:.35rem;">
+                        Attendees in a community workshop watching a presentation
+                    </figcaption>
+                </figure>
+            </section>
+
+            <footer class="card" role="contentinfo">
+                <address>
+                    <strong>Community Learning Hub</strong><br>
+                    123 Southwest Street • Your City, ST • 12345<br>
+                    <a href="#">(555) 555-5555</a> • <a href="#">hello@communityhub.org</a>
+                </address>
+                <p style="margin-top:.5rem;">Built with accessibility in mind. <span aria-hidden="true">♥</span></p>
+            </footer>
+
+        </main>
+
+        <script>
+            // Small enhancement: reflect expanded/collapsed state on dropdown button for assistive tech.
+            (function(){
+            const btn = document.querySelector('button[aria-controls="programs-submenu"]');
+            const submenu = document.getElementById('programs-submenu');
+            if(!btn || !submenu) return;
+
+            // When it receives focus or mouseenter, set expanded true. When focus leaves, set false.
+            btn.addEventListener('click', (e) => {
+                // allow default focus-within behavior for CSS dropdown; toggle aria-expanded for screen readers
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+            });
+
+            // Close submenu when tabbing away
+            document.addEventListener('click', (e) => {
+                if (!btn.contains(e.target) && !submenu.contains(e.target)) {
+                btn.setAttribute('aria-expanded','false');
+                }
+            });
+
+            // Ensure keyboard accessible: when Escape pressed, collapse
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'Escape'){
+                btn.setAttribute('aria-expanded','false');
+                btn.focus();
+                }
+            });
+            })();
+        </script>
+    </body>
+</html>
