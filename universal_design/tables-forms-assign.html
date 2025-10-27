@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tables, Forms, Tabbed Browsing, and Screen Reading</title>
         <link href="css/table-forms-assign.css" rel="stylesheet">
         <!-- Google Fonts -->
@@ -16,13 +16,13 @@
         ============================= */ -->
         <a class="skip-link" href="#main">Skip to main content</a>
 
-        <header role="banner">
+        <header>
             <a class="brand" aria-label="Community Learning Hub homepage">
                 <span class="material-icons" aria-hidden="true" style="font-size:28px; color:var(--accent);">school</span>
                 <h1>Community Learning Hub</h1>
             </a>
 
-            <nav role="navigation" aria-label="Primary navigation">
+            <nav aria-label="Primary navigation">
                 <h2 class="sr-only">Main navigation</h2>
                 <ul class="menu">
                     <li>
@@ -38,14 +38,14 @@
             </nav>
         </header>
 
-        <main id="main" role="main" aria-labelledby="main-heading">
+        <main id="main" aria-labelledby="main-heading">
             <div class="intro">
                 <section class="card" aria-labelledby="main-heading">
                     <h2 id="main-heading">Upcoming Community Workshops</h2>
                     <p class="lead">We run hands-on workshops to make learning accessible to everyone. Below you will find details for our next three events and a registration form for the one-weekend intensive.</p>
                 </section>
 
-                <aside class="card" aria-labelledby="support-heading" role="complementary">
+                <aside class="card" aria-labelledby="support-heading">
                     <h3 id="support-heading">Support & Accessibility</h3>
                     <p class="lead">Need an accommodation? We offer live captioning, materials in large print, and one-on-one support during sessions. Use the registration form to request accommodations.</p>
                 </aside>
@@ -58,9 +58,9 @@
                     <section aria-labelledby="event-list-heading">
                         <h3 id="event-list-heading">Featured events (next 30 days)</h3>
 
+                        <div id="table-desc" class="sr-only">This table lists the next three events, their dates, times, venues, and whether they are free or ticketed.</div>
                         <table aria-describedby="table-desc">
                             <caption>Event schedule and locations</caption>
-                            <div id="table-desc" class="sr-only">This table lists the next three events, their dates, times, venues, and whether they are free or ticketed.</div>
                             <thead>
                                 <tr>
                                     <th scope="col">Date</th>
