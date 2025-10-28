@@ -89,7 +89,7 @@ header {
 }
 nav { 
   grid-area: navvy; 
-  background: #f4f4f4; 
+  background: var(--secondary-color); 
 }
 main { 
   grid-area: mainy; 
