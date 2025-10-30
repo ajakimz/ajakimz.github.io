@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WA11 | Aja Kimsey</title>
+        <link rel="stylesheet" href="wa11.css">
+    </head>
+    <body>
+        <header>
+            <h1>TuneFindr 🎧</h1>
+            <p>Search for songs and preview them. Your data, your control.</p>
+        </header>
+
+        <main>
+            <section class="controls">
+                <input type="text" id="searchInput" placeholder="Search for a song or artist...">
+                <button id="searchBtn">Search</button>
+
+                <div class="privacy">
+                    <label>
+                    <input type="checkbox" id="saveHistory"> Save my search history locally
+                    </label>
+                </div>
+            </section>
+
+            <section id="results"></section>
+
+            <section id="historySection">
+                <h2>Search History</h2>
+                <ul id="historyList"></ul>
+                <button id="exportBtn">Export Data</button>
+                <button id="clearBtn">Clear Data</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by iTunes API • Built for ethical user control</p>
+        </footer>
+
+        <script src="wa11.js"></script>
+    </body>
+</html>
