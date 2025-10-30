@@ -21,6 +21,10 @@ main {
   padding: 2em;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .controls {
   margin-bottom: 1.5em;
 }
@@ -61,7 +65,7 @@ main {
 
 .track {
   background: #181818;
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 1em;
   width: 200px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
@@ -69,7 +73,7 @@ main {
 
 .track img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .track h3 {

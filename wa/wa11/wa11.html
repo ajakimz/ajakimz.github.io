@@ -8,12 +8,12 @@
     </head>
     <body>
         <header>
-            <h1>TuneFindr 🎧</h1>
-            <p>Search for songs and preview them. Your data, your control.</p>
+            <h1>Tune Finder 🎧</h1>
+            <p>Search for songs and preview them.</p>
         </header>
 
         <main>
-            <section class="controls">
+            <div class="controls">
                 <input type="text" id="searchInput" placeholder="Search for a song or artist...">
                 <button id="searchBtn">Search</button>
 
@@ -22,9 +22,9 @@
                     <input type="checkbox" id="saveHistory"> Save my search history locally
                     </label>
                 </div>
-            </section>
+            </div>
 
-            <section id="results"></section>
+            <div id="results"></div>
 
             <section id="historySection">
                 <h2>Search History</h2>
@@ -35,7 +35,7 @@
         </main>
 
         <footer>
-            <p>Powered by iTunes API • Built for ethical user control</p>
+            <p><small>Powered by iTunes API</small></p>
         </footer>
 
         <script src="wa11.js"></script>

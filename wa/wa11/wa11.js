@@ -41,12 +41,12 @@ async function fetchTracks(query) {
     }
 
     results.innerHTML = data.results.map(track => `
-      <div class="track">
-        <img src="${track.artworkUrl100}" alt="${track.trackName}">
+    <div class="track">
+        <img src="${track.artworkUrl100.replace('100x100bb.jpg', '600x600bb.jpg')}" alt="${track.trackName}">
         <h3>${track.trackName}</h3>
         <p>${track.artistName}</p>
         ${track.previewUrl ? `<audio controls src="${track.previewUrl}"></audio>` : `<p>No preview available</p>`}
-      </div>
+    </div>
     `).join('');
 
   } catch (err) {
