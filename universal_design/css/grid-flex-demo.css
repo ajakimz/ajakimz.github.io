@@ -6,16 +6,24 @@
     margin: 0;
 }
 
+:root {
+    --color-primary: #1F7A8C;
+    --color-secondary: #BFDBF7;
+    --color-accent: #E1E5F2;
+    --color-light: #F0F4F8;
+    --color-dark: #022B3A;
+}
+
 body {
     background-color: rgb(232, 232, 232);
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
 }
 
 h1,
 h2,
 h3 {
-    font-family: serif;
+    font-family: 'Montserrat', serif;
     font-weight: normal;
     padding: 0.2em 0;
 }
@@ -58,12 +66,12 @@ footer {
     "footy  footy   footy";
 }
 
-header {grid-area: heady; background:rgb(236, 152, 152);}
-nav {grid-area: navvy; background: rgb(241, 176, 151);}
-main {grid-area: mainy; background: lightgoldenrodyellow;}
-#aside1 {grid-area: aside1; background: rgb(182, 240, 182);}
-#aside2 {grid-area: aside2; background: rgb(191, 226, 238);}
-footer {grid-area: footy; background: rgb(245, 195, 202);}
+header { grid-area: heady; background: var(--color-primary); color: white; }
+nav { grid-area: navvy; background: var(--color-secondary); }
+main { grid-area: mainy; background: var(--color-light); }
+#aside1 { grid-area: aside1; background: var(--color-accent); }
+#aside2 { grid-area: aside2; background: var(--color-accent); }
+footer { grid-area: footy; background: var(--color-dark); color: white; }
 
 nav ul {
     display: flex;
@@ -75,9 +83,7 @@ nav ul li {
     list-style: none;
 }
 
-@media screen 
-and (min-width: 641px)
-and (max-width: 900px) {
+@media screen and (min-width: 641px) and (max-width: 900px) {
     .container {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
@@ -89,8 +95,7 @@ and (max-width: 900px) {
     }
 }
 
-@media screen 
-and (max-width: 640px) {
+@media screen and (max-width: 640px) {
     .container {
         grid-template-columns: 1fr;
         grid-template-areas: 
@@ -103,13 +108,30 @@ and (max-width: 640px) {
     }
     nav ul {
         flex-flow: column nowrap;
+        align-items: stretch;
         text-align: center;
+        gap: 0.5em;
     }
-    nav ul il a {
+    nav ul li a {
         display: block;
-        padding: 10px 5px;
-        margin: 5px;
-        border: 1px black solid;
+        padding: 12px;
         background: white;
+        border: 1px solid var(--color-dark);
+        border-radius: 8px;
     }
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+}
+
+nav a:hover,
+nav a:focus {
+    background: var(--color-primary);
+    color: white;
+    outline: 2px solid var(--color-dark);
 }
