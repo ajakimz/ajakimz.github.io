@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WA13 | Aja Kimsey — Tune Finder</title>
+  <link rel="stylesheet" href="wa13.css">
+</head>
+<body>
+  <a href="#searchInput" class="skip-link">Skip to search bar</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <h1>Tune Finder 🎧</h1>
+      <p class="lead">Search songs (iTunes API) and preview them. Use the <strong>Novelty</strong> slider to re-rank results and surface lesser-known artists.</p>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section aria-labelledby="searchTitle" class="search-card">
+      <h2 id="searchTitle" class="sr-only">Search music</h2>
+
+      <form id="searchForm" class="controls" autocomplete="off">
+        <label for="searchInput" class="sr-only">Search for a song or artist</label>
+        <input type="text" id="searchInput" placeholder="Search for a song or artist..." aria-label="Search for a song or artist">
+
+        <button type="submit" id="searchBtn" class="primary">Search</button>
+
+        <div class="privacy">
+          <label>
+            <input type="checkbox" id="saveHistory"> Save search history locally
+          </label>
+        </div>
+      </form>
+
+      <div class="interactive-critique" aria-hidden="false">
+        <div class="novelty-header">
+          <label for="noveltyRange">Novelty (boost independent / low-pop tracks): <span id="noveltyValue">20%</span></label>
+          <input id="noveltyRange" type="range" min="0" max="100" value="20" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20">
+        </div>
+        <p class="critique-note">Sliding toward higher Novelty increases variety by boosting less popular / independent tracks (demonstrates how a fairness tweak could change recommendations).</p>
+      </div>
+
+      <div class="results-controls">
+        <div id="resultsMeta" class="results-meta" aria-live="polite"></div>
+        <div>
+          <button id="sortBtn" class="ghost">Sort: Final Score</button>
+          <button id="resetBtn" class="ghost">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultsSection" aria-labelledby="resultsTitle">
+      <h2 id="resultsTitle" class="sr-only">Search results</h2>
+      <div id="results" class="results-grid" role="list"></div>
+    </section>
+
+    <section id="historySection" class="card" aria-labelledby="historyTitle">
+      <h2 id="historyTitle">Search History</h2>
+      <ul id="historyList" class="history-list" aria-live="polite"></ul>
+      <div class="history-actions">
+        <button id="exportBtn" class="primary small">Export Data</button>
+        <button id="clearBtn" class="ghost small">Clear Data</button>
+      </div>
+    </section>
+
+    <section class="card critique-text" aria-labelledby="critiqueHeading">
+      <h3 id="critiqueHeading">Mini Project Critique</h3>
+      <p><strong>Observation:</strong> Recommender systems often prioritize popularity, which amplifies major artists and reduces visibility for independent or non-English music.</p>
+      <p><strong>Interactive critique:</strong> Use the slider to see how a small fairness tweak (novelty boost) changes the visible playlist ordering and increases diversity. Discovery slots highlight injected variety.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p><small>Prototype for ATLS 2200 — uses iTunes Search API (mocked popularity to demonstrate ranking). Created by Aja Kimsey.</small></p>
+  </footer>
+
+  <script src="wa13.js"></script>
+</body>
+</html>
