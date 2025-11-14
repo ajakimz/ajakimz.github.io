@@ -1,11 +1,3 @@
-/* wa13.js
-   WA13 prototype: iTunes search + novelty/fairness re-ranking
-   - Uses iTunes Search API for results & preview
-   - Simulates deterministic 'popularity' from trackId so rankings are repeatable
-   - Novelty slider mixes personalization (query match) with novelty (inverse popularity)
-   - Discovery slots (every 4th item) highlight lower-pop items
-*/
-
 const searchForm = document.getElementById('searchForm');
 const searchInput = document.getElementById('searchInput');
 const resultsEl = document.getElementById('results');
@@ -28,14 +20,12 @@ displayHistory();
 
 // Utility: deterministic pseudo-popularity based on trackId (0..100)
 function computePopularity(trackId) {
-  // simple hash-like deterministic function
   let x = Number(trackId) || 0;
-  // linear congruential-ish
   x = (x * 9301 + 49297) % 233280;
-  return Math.floor((x / 233280) * 100); // 0..99
+  return clamp(Math.floor((x / 233280) * 100), 0, 100); // clamp to 0..100
 }
 
-// Personalization score: simple genre/artist match boost from query tokens
+// Personalization score
 function personalizationScore(track, queryTokens) {
   const title = (track.trackName || '').toLowerCase();
   const artist = (track.artistName || '').toLowerCase();
@@ -45,17 +35,16 @@ function personalizationScore(track, queryTokens) {
     if (title.includes(t)) score += 0.35;
     if (artist.includes(t)) score += 0.25;
   });
-  // small variance
   score += (Math.random() * 0.08) - 0.04;
   return clamp(score, 0, 1);
 }
 
-// Novelty score: inverse normalized popularity (0..1)
+// Novelty score
 function noveltyScore(popularity) {
   return 1 - (popularity / 100);
 }
 
-// compute final score mixing personalization and novelty
+// Final score
 function computeFinalScore(track, tokens, noveltyWeight) {
   const p = personalizationScore(track, tokens);
   const n = noveltyScore(track.__popularity);
@@ -63,7 +52,7 @@ function computeFinalScore(track, tokens, noveltyWeight) {
   return { final, personalization: p, novelty: n };
 }
 
-// clamp helper
+// Clamp helper
 function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 
 // Escape html
@@ -71,7 +60,7 @@ function escapeHtml(str) {
   return String(str || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 }
 
-// Render helper: builds DOM for a single track
+// Render helper
 function buildTrackCard(track, index, isDiscovery=false) {
   const div = document.createElement('div');
   div.className = 'track' + (isDiscovery ? ' discovery' : '');
@@ -97,12 +86,12 @@ function buildTrackCard(track, index, isDiscovery=false) {
         Score: <strong>${track.__final.toFixed(2)}</strong>
       </div>
     </div>
-    ${ preview ? `<audio controls preload="none" style="margin-top:8px"><source src="${preview}"></audio>` : `<p style="margin-top:8px;color:var(--muted)">No preview</p>` }
+    ${ preview ? `<audio controls preload="none" style="margin-top:8px;width:100%"><source src="${preview}"></audio>` : `<p style="margin-top:8px;color:var(--muted)">No preview</p>` }
   `;
   return div;
 }
 
-// Render list of tracks (with discovery slots)
+// Render results with discovery slots
 function renderResults(tracks, noveltyPercent) {
   resultsEl.innerHTML = '';
   if (!tracks || tracks.length === 0) {
@@ -111,23 +100,22 @@ function renderResults(tracks, noveltyPercent) {
     return;
   }
 
-  // Build discovery slots: every 4th item we prefer a high-novelty item
   const discoveryInterval = 4;
   const used = new Set();
   const finalList = [];
   let j = 0;
 
   while (finalList.length < Math.min(12, tracks.length) && j < tracks.length) {
-    // if it's a discovery slot
     if ((finalList.length + 1) % discoveryInterval === 0) {
-      const candidate = tracks.find(t => !used.has(t.trackId) && t.__final && t.__novelty > 0.6);
+      const candidate = tracks
+        .filter(t => !used.has(t.trackId) && t.__final && t.__novelty > 0.6)
+        .sort((a,b) => b.__novelty - a.__novelty)[0];
       if (candidate) {
         finalList.push(candidate);
         used.add(candidate.trackId);
         continue;
       }
     }
-    // otherwise take next highest remaining
     const next = tracks.find(t => !used.has(t.trackId));
     if (next) {
       finalList.push(next);
@@ -136,7 +124,6 @@ function renderResults(tracks, noveltyPercent) {
     j++;
   }
 
-  // render DOM
   finalList.forEach((t, idx) => {
     const isDiscovery = ((idx + 1) % discoveryInterval === 0);
     const card = buildTrackCard(t, idx+1, isDiscovery);
@@ -146,7 +133,7 @@ function renderResults(tracks, noveltyPercent) {
   resultsMeta.textContent = `Showing ${finalList.length} tracks — Novelty ${noveltyPercent}%`;
 }
 
-// Fetch iTunes tracks then augment with pop & compute ranking
+// Fetch & rank
 async function fetchAndRank(query, noveltyPercent=20) {
   resultsEl.innerHTML = '<p style="color:var(--muted)">Loading…</p>';
   resultsMeta.textContent = '';
@@ -156,7 +143,6 @@ async function fetchAndRank(query, noveltyPercent=20) {
     const data = await resp.json();
     const items = data.results || [];
 
-    // augment deterministic popularity and compute scores
     const tokens = query.toLowerCase().split(/\s+/).filter(Boolean);
     const noveltyWeight = noveltyPercent / 100;
 
@@ -170,7 +156,6 @@ async function fetchAndRank(query, noveltyPercent=20) {
       return item;
     });
 
-    // sort by final descending
     scored.sort((a,b) => b.__final - a.__final);
 
     renderResults(scored, noveltyPercent);
@@ -179,24 +164,22 @@ async function fetchAndRank(query, noveltyPercent=20) {
   }
 }
 
-// update novelty label when slider moves
+// Update novelty label
 function updateNoveltyLabel() {
   const v = Number(noveltyRange.value);
   noveltyValue.textContent = `${v}%`;
   noveltyRange.setAttribute('aria-valuenow', String(v));
 }
 
-// Event wiring
-searchForm.addEventListener('submit', (e) => {
+// Event listeners
+searchForm.addEventListener('submit', e => {
   e.preventDefault();
   const q = searchInput.value.trim();
   if (!q) return;
   const novelty = Number(noveltyRange.value);
 
-  // save history if checked
   if (saveHistory.checked) {
     history.unshift(q);
-    // keep last 12
     history = history.slice(0,12);
     localStorage.setItem('searchHistory', JSON.stringify(history));
     displayHistory();
@@ -205,14 +188,6 @@ searchForm.addEventListener('submit', (e) => {
   fetchAndRank(q, novelty);
 });
 
-searchInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    // form submit handles it
-    return;
-  }
-});
-
-// Export & clear
 clearBtn.addEventListener('click', () => {
   localStorage.removeItem('searchHistory');
   history = [];
@@ -229,40 +204,55 @@ exportBtn.addEventListener('click', () => {
   URL.revokeObjectURL(url);
 });
 
-// Sort button (toggles sort mode) — kept for UX demonstration (final score vs popularity)
+// Sort button: toggle Final Score / Popularity
 let sortMode = 'final';
 sortBtn.addEventListener('click', async () => {
-  // if we already have results on screen, re-sort them client-side
+  sortMode = sortMode === 'final' ? 'popularity' : 'final';
+  sortBtn.textContent = `Sort: ${sortMode === 'final' ? 'Final Score' : 'Popularity'}`;
+
   const q = searchInput.value.trim();
   if (!q) return;
   const novelty = Number(noveltyRange.value);
-  // fetch and rank again; it's quick and demonstrates effect
-  await fetchAndRank(q, novelty);
-  // toggle visual state briefly
-  sortBtn.textContent = 'Sort: Final Score';
+
+  const resp = await fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(q)}&entity=song&limit=30`);
+  const data = await resp.json();
+  const items = data.results || [];
+
+  const tokens = q.toLowerCase().split(/\s+/).filter(Boolean);
+  const noveltyWeight = novelty / 100;
+
+  const scored = items.map(item => {
+    const pop = computePopularity(item.trackId || item.collectionId || item.trackTimeMillis || Math.random()*100);
+    item.__popularity = pop;
+    const s = computeFinalScore(item, tokens, noveltyWeight);
+    item.__final = s.final;
+    item.__novelty = s.novelty;
+    return item;
+  });
+
+  if (sortMode === 'final') scored.sort((a,b)=> b.__final - a.__final);
+  else scored.sort((a,b)=> b.__popularity - a.__popularity);
+
+  renderResults(scored, novelty);
 });
 
-// Reset control
+// Reset
 resetBtn.addEventListener('click', () => {
   noveltyRange.value = 20;
   updateNoveltyLabel();
   saveHistory.checked = false;
   resultsEl.innerHTML = '';
   resultsMeta.textContent = '';
-  // leave history intact
 });
 
-// slider immediate re-ranking if results exist
+// Re-rank on slider input
 noveltyRange.addEventListener('input', () => {
   updateNoveltyLabel();
-  // if we have a last search, re-run ranking
   const q = searchInput.value.trim();
   if (q) {
-    // small debounce
     if (window.__noveltyTimer) clearTimeout(window.__noveltyTimer);
     window.__noveltyTimer = setTimeout(() => fetchAndRank(q, Number(noveltyRange.value)), 250);
   }
 });
 
-// initialize UI
 updateNoveltyLabel();

@@ -11,8 +11,8 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <h1>Tune Finder 🎧</h1>
-      <p class="lead">Search songs (iTunes API) and preview them. Use the <strong>Novelty</strong> slider to re-rank results and surface lesser-known artists.</p>
+      <h1>Spotify Search 🎧</h1>
+      <p class="lead">Search songs and preview them. Use the <strong>Novelty</strong> slider to re-rank results and surface lesser-known artists.</p>
     </div>
   </header>
 
@@ -20,7 +20,7 @@
     <section aria-labelledby="searchTitle" class="search-card">
       <h2 id="searchTitle" class="sr-only">Search music</h2>
 
-      <form id="searchForm" class="controls" autocomplete="off">
+      <form id="searchForm" class="controls">
         <label for="searchInput" class="sr-only">Search for a song or artist</label>
         <input type="text" id="searchInput" placeholder="Search for a song or artist..." aria-label="Search for a song or artist">
 
@@ -28,7 +28,7 @@
 
         <div class="privacy">
           <label>
-            <input type="checkbox" id="saveHistory"> Save search history locally
+            <input type="checkbox" id="saveHistory">Save search history locally
           </label>
         </div>
       </form>
@@ -72,7 +72,7 @@
   </main>
 
   <footer class="site-footer">
-    <p><small>Prototype for ATLS 2200 — uses iTunes Search API (mocked popularity to demonstrate ranking). Created by Aja Kimsey.</small></p>
+    <p><small>Powered by iTunes API. Created by Aja Kimsey.</small></p>
   </footer>
 
   <script src="wa13.js"></script>
