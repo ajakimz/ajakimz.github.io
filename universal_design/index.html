@@ -1,57 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Aja Kimsey | Class Portal</title>
-        <meta name="description" content="Accessible class portal by Aja Kimsey for Universal Design for Digital Media course assignments and projects.">
-        <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@400;500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/universal_design/css/style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aja Kimsey | Class Portal</title>
+    <meta name="description" content="Accessible class portal by Aja Kimsey for Universal Design for Digital Media course assignments and projects.">
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/universal_design/css/style.css">
+</head>
 
-    <body>
-        <!-- Skip navigation link for screen readers -->
-        <a class="skip-link" href="#main-content">Skip to main content</a>
+<body>
+    <!-- Skip navigation link -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-        <div class="container">
-            <header>
-                <h1>Aja Kimsey</h1>
-                <h2>Accessible Class Portal</h2>
-                <nav aria-label="Main navigation">
-                    <h2 class="sr-only">Main Navigation</h2>
-                    <ul>
-                        <li><a href="#about">About Me</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                    </ul>
-                </nav>
-            </header>
+    <div class="container">
 
-            <main id="main-content">
-                <section id="about">
-                    <h2>About Me</h2>
-                    <div class="about-grid">
-                        <img src="/universal_design/photos/pfp.jpg" alt="Photo of Aja Kimsey" class="profile-img">
+        <header>
+            <h1>Aja Kimsey</h1>
+            <p class="tagline">Accessible Class Portal</p>
+            <nav aria-label="Main navigation">
+    <h2 class="sr-only">Main Navigation</h2>
+    <ul class="nav-list">
+        
+        <li><a href="#about">About Me</a></li>
+
+        <!-- Dropdown Wrapper -->
+        <li class="dropdown">
+            <button aria-expanded="false" aria-haspopup="true">
+                Projects
+            </button>
+
+            <ul class="dropdown-menu">
+                <li><a href="semantic-part-1.html" target="_blank">Lab #2 Part 1</a></li>
+                <li><a href="semantic-part-2.html" target="_blank">Lab #2 Part 2</a></li>
+                <li><a href="tables-forms-assign.html" target="_blank">Lab #3</a></li>
+                <li><a href="grid-flex-demo.html" target="_blank">Lab #4</a></li>
+                <li><a href="project-2.html" target="_blank">Final Project</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</nav>
+
+        </header>
+
+        <main id="main-content">
+            <!-- ABOUT SECTION -->
+            <section id="about">
+                <h2>About Me</h2>
+
+                <div class="about-grid">
+                    <img src="/universal_design/photos/pfp.jpg" alt="Photo of Aja Kimsey" class="profile-img">
+
+                    <div>
                         <p>
-                        Hi! I’m Aja Kimsey, a third-year student at the University of Colorado Boulder pursuing a B.S. in Creative Technology and Design with a minor in Business. My focus is in UI/UX research, and I am also working toward a certificate in UX Design. I’m passionate about creating accessible, user-centered digital experiences that combine creativity with functionality. Outside of academics, I’m a Captain of the CU Boulder Club Dance Team, and I love to travel and explore new cultures around the world!
+                            Hi! I’m Aja Kimsey, a third-year student at the University of Colorado Boulder pursuing a B.S. in Creative Technology and Design with a minor in Business. My focus is in UI/UX research, and I am also working toward a certificate in UX Design. I’m passionate about creating accessible, user-centered digital experiences that combine creativity with functionality. Outside of academics, I’m a Captain of the CU Boulder Club Dance Team, and I love to travel and explore new cultures around the world!
+                        </p>
+
+                        <p>
+                            Throughout my coursework, I’ve become increasingly interested in inclusive design and the role accessibility plays in shaping user experiences. I enjoy experimenting with interactive design, development tools, and usability testing to better understand how people interact with digital interfaces. My goal is to build designs that are beautiful, meaningful, and accessible to everyone.
                         </p>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section id="projects">
-                    <h2>Class Projects</h2>
-                    <ul>
-                        <li><a href="semantic-part-1.html" target="_blank">Lab #2 Part 1 - Coding & Posting a Web Page - The Basics</a></li>
-                        <li><a href="semantic-part-2.html" target="_blank">Lab #2 Part 2 - Coding & Posting a Web Page - The Basics</a></li>
-                        <li><a href="tables-forms-assign.html" target="_blank">Lab #3 - Tables, Forms, Tabbed Browsing, and Screen Reading</a></li>
-                        <li><a href="grid-flex-demo.html" target="_blank">Lab #4 – Accessible CSS Layout</a></li>
-                        <li>COMING SOON – Final Project – Universal Design Website</li>
-                    </ul>
-                </section>
-            </main>
+            <!-- PROJECTS SECTION -->
+            <section id="projects">
+                <h2>Class Projects</h2>
+                <ul>
+                    <li><a href="semantic-part-1.html" target="_blank">Lab #2 Part 1 - Coding & Posting a Web Page - The Basics</a></li>
+                    <li><a href="semantic-part-2.html" target="_blank">Lab #2 Part 2 - Coding & Posting a Web Page - The Basics</a></li>
+                    <li><a href="tables-forms-assign.html" target="_blank">Lab #3 - Tables, Forms, Tabbed Browsing, and Screen Reading</a></li>
+                    <li><a href="grid-flex-demo.html" target="_blank">Lab #4 – Accessible CSS Layout</a></li>
+                    <li><a href="project-2.html" target="_blank">Project – Universal Design Website</a></li>
+                </ul>
+            </section>
+        </main>
 
-            <footer>
-                <p><small>&copy; 2025 Aja Kimsey | University of Colorado Boulder</small></p>
-            </footer>
-        </div>
-    </body>
+        <footer>
+            <p><small>&copy; 2025 Aja Kimsey | University of Colorado Boulder</small></p>
+        </footer>
+
+    </div>
+    <script>
+        const dropdown = document.querySelector(".dropdown");
+        const button = dropdown.querySelector("button");
+
+        button.addEventListener("click", () => {
+            const isOpen = dropdown.classList.toggle("open");
+            button.setAttribute("aria-expanded", isOpen);
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove("open");
+                button.setAttribute("aria-expanded", "false");
+            }
+        });
+    </script>
+</body>
 </html>
