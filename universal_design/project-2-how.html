@@ -27,39 +27,67 @@
 
     <main>
         <section>
-            <h2>Design Practices</h2>
+            <h2>Starting With Users</h2>
+            <p>Universal Design starts with people, not aesthetics. Designers begin by understanding user needs, barriers, motivations, and contexts of use. Tools like personas, user journeys, and context-of-use mapping help create experiences that feel intuitive and welcoming.</p>
             <ul>
-                <li>Use personas and user profiles to ground design decisions.</li>
-                <li>Apply interaction design principles such as feedback, visibility, and affordances.</li>
-                <li>Structure layouts with clear hierarchy, intuitive navigation, and consistent spacing.</li>
-                <li>Develop strong information architecture to make content easy to find.</li>
+                <li>Create personas representing different ability levels, ages, and devices.</li>
+                <li>Consider environmental conditions like glare, noise, low bandwidth, or limited mobility.</li>
+                <li>Map user journeys to identify where confusion or friction might occur.</li>
             </ul>
+        </section>
 
-            <h2>Building with Standards</h2>
+        <section>
+            <h2>Interaction & Interface Design</h2>
             <ul>
-                <li>Use semantic HTML elements for meaningful structure.</li>
-                <li>Apply WAI-ARIA attributes only when necessary to enhance accessibility.</li>
-                <li>Create responsive layouts with CSS Grid and Flexbox.</li>
-                <li>Ensure color contrast meets accessibility standards.</li>
+                <li><strong>Feedback:</strong> Provide confirmation when actions succeed or fail.</li>
+                <li><strong>Consistency:</strong> Predictable layouts reduce cognitive load.</li>
+                <li><strong>Affordances & Signifiers:</strong> Buttons should look like buttons; links should look clickable.</li>
+                <li><strong>Hierarchy:</strong> Use headings, spacing, and color intentionally.</li>
             </ul>
+        </section>
 
-            <h2>Accessible Form & Table Design</h2>
+        <section>
+            <h2>Building With Web Standards</h2>
             <ul>
-                <li>Label all form controls clearly.</li>
-                <li>Use proper table headers for assistive technologies.</li>
-                <li>Group related inputs for clarity and usability.</li>
+                <li>Use semantic HTML elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code>.</li>
+                <li>Use ARIA to enhance accessibility — but only when semantics aren’t enough.</li>
+                <li>Apply responsive design with CSS Grid, Flexbox, and fluid typography.</li>
+                <li>Ensure color contrast meets WCAG minimum ratios.</li>
+                <li>Make interactive elements keyboard accessible.</li>
             </ul>
+        </section>
 
+        <section>
+            <h2>Accessible Forms & Tables</h2>
+            <p>Forms and tables are common places where accessibility breaks down. To design them well:</p>
+            <ul>
+                <li>Provide clear labels for every input.</li>
+                <li>Use <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> for grouped controls.</li>
+                <li>Ensure table headers use <code>&lt;th&gt;</code> with scope attributes like <code>scope="col"</code> or <code>scope="row"</code>.</li>
+                <li>Provide instructions and error messages that are descriptive and easy to notice.</li>
+            </ul>
+        </section>
+
+        <section>
             <h2>Testing for Accessibility</h2>
+            <p>Testing is essential to ensuring content works for all users:</p>
             <ul>
-                <li>Use accessibility evaluation tools to check color contrast, structure, and keyboard navigation.</li>
-                <li>Perform “easy checks” — headings, alt text, link clarity, semantic structure.</li>
-                <li>Test content with screen readers and different devices.</li>
-                <li>Evaluate for mobile accessibility including touch targets and layout scaling.</li>
+                <li>Use automated tools to check headings, alt text, semantics, and color contrast.</li>
+                <li>Perform keyboard-only navigation testing.</li>
+                <li>Try screen readers like NVDA, VoiceOver, or Narrator.</li>
+                <li>Test on a variety of devices and screen sizes.</li>
+                <li>Use WCAG “easy checks” to catch common issues.</li>
             </ul>
+        </section>
 
-            <h2>Advocacy & Continuous Improvement</h2>
-            <p>Inclusive design is an ongoing process. Designers should continue learning, testing, and advocating for accessible experiences in every project, using feedback and research to guide improvements.</p>
+        <section>
+            <h2>Continuous Improvement</h2>
+            <p>Universal Design is not a one-time task — it’s an ongoing practice. Designers must continuously learn, iterate, and advocate for accessibility in every project. As technology evolves, so do user needs and best practices.</p>
+        </section>
+
+        <section>
+            <h2>Summary</h2>
+            <p>Universal Design becomes real when we combine empathy, technical skill, user research, and ongoing evaluation. By integrating these practices into every decision, designers create digital experiences that are resilient, inclusive, and meaningful — for everyone.</p>
         </section>
     </main>
 
