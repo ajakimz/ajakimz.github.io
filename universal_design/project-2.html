@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 2</title>
+    <title>Universal Design Project — Home</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
@@ -13,6 +13,8 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <div class="container">
 
         <header>
@@ -22,16 +24,16 @@
         <nav aria-label="Main Navigation">
             <h2 class="sr-only">Main Navigation</h2>
             <ul>
-                <li><a href="project-2.html">Home</a></li>
+                <li><a href="project-2.html" aria-current="page">Home</a></li>
                 <li><a href="project-2-what.html">What</a></li>
                 <li><a href="project-2-why.html">Why</a></li>
                 <li><a href="project-2-how.html">How</a></li>
             </ul>
         </nav>
 
-        <main>
-            <section>
-                <h2>Welcome</h2>
+        <main id="main-content">
+            <section aria-labelledby="welcome-title">
+                <h2 id="welcome-title">Welcome</h2>
                 <p>
                     This site represents my Project 2 work for Universal Design for Digital Media. 
                     It explores the foundational ideas behind Universal Design and how these principles 
@@ -41,7 +43,7 @@
                 <h2>Project Overview</h2>
                 <p>
                     This project breaks down Universal Design into three interconnected areas: 
-                    <em>What it is, why it matters, and how designers can apply it</em>. The purpose of 
+                    <em>what it is, why it matters, and how designers can apply it</em>. The purpose of 
                     this website is to present those ideas in a clear, accessible, and thoughtfully 
                     structured way (following the same principles the project explains).
                 </p>
@@ -69,14 +71,13 @@
                     are all crafted to support clarity and usability for a wide range of readers.
                 </p>
                 <p>
-                    Feel free to navigate using the menu above and explore each area of Universal Design 
+                    Feel free to navigate using the menu and explore each area of Universal Design 
                     through structured, accessible content.
                 </p>
             </section>
         </main>
 
-
-        <footer>
+        <footer aria-label="Site Footer">
             <small>&copy; 2025 Aja Kimsey</small>
         </footer>
 

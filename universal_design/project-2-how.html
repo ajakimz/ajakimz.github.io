@@ -3,98 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How | Project 2</title>
+    <title>How | Universal Design Project</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <link href="css/project-2.css" rel="stylesheet">
 </head>
 
 <body>
-<div class="container">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header>
-        <h1>How Do We Apply Universal Design?</h1>
-    </header>
+    <div class="container">
 
-    <nav aria-label="Main Navigation">
-        <h2 class="sr-only">Main Navigation</h2>
-        <ul>
-            <li><a href="project-2.html">Home</a></li>
-            <li><a href="project-2-what.html">What</a></li>
-            <li><a href="project-2-why.html">Why</a></li>
-            <li><a href="project-2-how.html">How</a></li>
-        </ul>
-    </nav>
+        <header>
+            <h1>Universal Design Project</h1>
+        </header>
 
-    <main>
-        <section>
-            <h2>Starting With Users</h2>
-            <p>Universal Design starts with people, not aesthetics. Designers begin by understanding user needs, barriers, motivations, and contexts of use. Tools like personas, user journeys, and context-of-use mapping help create experiences that feel intuitive and welcoming.</p>
+        <nav aria-label="Main Navigation">
+            <h2 class="sr-only">Main Navigation</h2>
             <ul>
-                <li>Create personas representing different ability levels, ages, and devices.</li>
-                <li>Consider environmental conditions like glare, noise, low bandwidth, or limited mobility.</li>
-                <li>Map user journeys to identify where confusion or friction might occur.</li>
+                <li><a href="project-2.html">Home</a></li>
+                <li><a href="project-2-what.html">What</a></li>
+                <li><a href="project-2-why.html">Why</a></li>
+                <li><a href="project-2-how.html" class="active">How</a></li>
             </ul>
-        </section>
+        </nav>
 
-        <section>
-            <h2>Interaction & Interface Design</h2>
-            <ul>
-                <li><strong>Feedback:</strong> Provide confirmation when actions succeed or fail.</li>
-                <li><strong>Consistency:</strong> Predictable layouts reduce cognitive load.</li>
-                <li><strong>Affordances & Signifiers:</strong> Buttons should look like buttons; links should look clickable.</li>
-                <li><strong>Hierarchy:</strong> Use headings, spacing, and color intentionally.</li>
-            </ul>
-        </section>
+        <main id="main-content">
 
-        <section>
-            <h2>Building With Web Standards</h2>
-            <ul>
-                <li>Use semantic HTML elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code>.</li>
-                <li>Use ARIA to enhance accessibility — but only when semantics aren’t enough.</li>
-                <li>Apply responsive design with CSS Grid, Flexbox, and fluid typography.</li>
-                <li>Ensure color contrast meets WCAG minimum ratios.</li>
-                <li>Make interactive elements keyboard accessible.</li>
-            </ul>
-        </section>
+            <section>
+                <h2>How Do We Apply Universal Design?</h2>
+                <p>Universal Design starts with people, not aesthetics. Designers begin by understanding user needs, barriers, motivations, and contexts of use. Tools like personas, user journeys, and context-of-use mapping help create experiences that feel intuitive and welcoming.</p>
+                <ul>
+                    <li>Create personas representing different ability levels, ages, and devices.</li>
+                    <li>Consider environmental conditions like glare, noise, low bandwidth, or limited mobility.</li>
+                    <li>Map user journeys to identify where confusion or friction might occur.</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Accessible Forms & Tables</h2>
-            <p>Forms and tables are common places where accessibility breaks down. To design them well:</p>
-            <ul>
-                <li>Provide clear labels for every input.</li>
-                <li>Use <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> for grouped controls.</li>
-                <li>Ensure table headers use <code>&lt;th&gt;</code> with scope attributes like <code>scope="col"</code> or <code>scope="row"</code>.</li>
-                <li>Provide instructions and error messages that are descriptive and easy to notice.</li>
-            </ul>
-        </section>
+            <section>
+                <h2>Interaction & Interface Design</h2>
+                <ul>
+                    <li><strong>Feedback:</strong> Provide confirmation when actions succeed or fail.</li>
+                    <li><strong>Consistency:</strong> Predictable layouts reduce cognitive load.</li>
+                    <li><strong>Affordances & Signifiers:</strong> Buttons should look like buttons; links should look clickable.</li>
+                    <li><strong>Hierarchy:</strong> Use headings, spacing, and color intentionally.</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Testing for Accessibility</h2>
-            <p>Testing is essential to ensuring content works for all users:</p>
-            <ul>
-                <li>Use automated tools to check headings, alt text, semantics, and color contrast.</li>
-                <li>Perform keyboard-only navigation testing.</li>
-                <li>Try screen readers like NVDA, VoiceOver, or Narrator.</li>
-                <li>Test on a variety of devices and screen sizes.</li>
-                <li>Use WCAG “easy checks” to catch common issues.</li>
-            </ul>
-        </section>
+            <section>
+                <h2>Building With Web Standards</h2>
+                <ul>
+                    <li>Use semantic HTML elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code>.</li>
+                    <li>Use ARIA to enhance accessibility — but only when semantics aren’t enough.</li>
+                    <li>Apply responsive design with CSS Grid, Flexbox, and fluid typography.</li>
+                    <li>Ensure color contrast meets WCAG minimum ratios.</li>
+                    <li>Make interactive elements keyboard accessible.</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Continuous Improvement</h2>
-            <p>Universal Design is not a one-time task — it’s an ongoing practice. Designers must continuously learn, iterate, and advocate for accessibility in every project. As technology evolves, so do user needs and best practices.</p>
-        </section>
+            <section>
+                <h2>Accessible Forms & Tables</h2>
+                <p>Forms and tables are common places where accessibility breaks down. To design them well:</p>
+                <ul>
+                    <li>Provide clear labels for every input.</li>
+                    <li>Use <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> for grouped controls.</li>
+                    <li>Ensure table headers use <code>&lt;th&gt;</code> with scope attributes like <code>scope="col"</code> or <code>scope="row"</code>.</li>
+                    <li>Provide instructions and error messages that are descriptive and easy to notice.</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Summary</h2>
-            <p>Universal Design becomes real when we combine empathy, technical skill, user research, and ongoing evaluation. By integrating these practices into every decision, designers create digital experiences that are resilient, inclusive, and meaningful — for everyone.</p>
-        </section>
-    </main>
+            <section>
+                <h2>Testing for Accessibility</h2>
+                <p>Testing is essential to ensuring content works for all users:</p>
+                <ul>
+                    <li>Use automated tools to check headings, alt text, semantics, and color contrast.</li>
+                    <li>Perform keyboard-only navigation testing.</li>
+                    <li>Try screen readers like NVDA, VoiceOver, or Narrator.</li>
+                    <li>Test on a variety of devices and screen sizes.</li>
+                    <li>Use WCAG “easy checks” to catch common issues.</li>
+                </ul>
+            </section>
 
-    <footer>
-        <small>&copy; 2025 Aja Kimsey</small>
-    </footer>
+            <section>
+                <h2>Continuous Improvement</h2>
+                <p>Universal Design is not a one-time task — it’s an ongoing practice. Designers must continuously learn, iterate, and advocate for accessibility in every project. As technology evolves, so do user needs and best practices.</p>
+            </section>
 
-</div>
+            <section>
+                <h2>Summary</h2>
+                <p>Universal Design becomes real when we combine empathy, technical skill, user research, and ongoing evaluation. By integrating these practices into every decision, designers create digital experiences that are resilient, inclusive, and meaningful — for everyone.</p>
+            </section>
+
+        </main>
+
+        <footer aria-label="Site Footer">
+            <small>&copy; 2025 Aja Kimsey</small>
+        </footer>
+
+    </div>
 </body>
 </html>

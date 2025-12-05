@@ -1,3 +1,12 @@
+/* COLOR VARIABLES */
+:root {
+    --primary: #2E4A7D;
+    --secondary: #A7C4E0;
+    --light: #FFFFFF;
+    --accent: #E8EEF5;
+    --dark: #1A1A1A;
+}
+
 /* RESET */
 *,
 *:before,
@@ -42,13 +51,22 @@ p, li {
     clip: rect(0, 0, 0, 0);
 }
 
-/* COLOR VARIABLES */
-:root {
-    --primary: #2E4A7D;
-    --secondary: #A7C4E0;
-    --light: #FFFFFF;
-    --accent: #E8EEF5;
-    --dark: #1A1A1A;
+/* SKIP LINK */
+.skip-link {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    background: var(--light);
+    color: var(--primary);
+    padding: 0.75rem 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    z-index: 1000;
+    transition: top 0.2s ease-in-out;
+}
+
+.skip-link:focus {
+    top: 10px;
 }
 
 /* CONTAINER */
@@ -107,9 +125,16 @@ nav a {
 }
 
 nav a:hover,
-nav a:focus {
+nav a:focus,
+nav a[aria-current="page"] {
     background: var(--primary);
     color: white;
+}
+
+/* ACTIVE NAV LINK (for page highlighting) */
+nav ul li a.active {
+    background-color: var(--primary); /* or your dark color */
+    color: #fff;
 }
 
 /* MAIN */
