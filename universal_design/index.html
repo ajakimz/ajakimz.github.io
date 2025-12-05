@@ -18,33 +18,23 @@
         <header>
             <h1>Aja Kimsey</h1>
             <p class="tagline">Accessible Class Portal</p>
+
+            <!-- Nav -->
             <nav aria-label="Main navigation">
-    <h2 class="sr-only">Main Navigation</h2>
-    <ul class="nav-list">
-        
-        <li><a href="#about">About Me</a></li>
+                <h2 class="sr-only">Main Navigation</h2>
 
-        <!-- Dropdown Wrapper -->
-        <li class="dropdown">
-            <button aria-expanded="false" aria-haspopup="true">
-                Projects
-            </button>
-
-            <ul class="dropdown-menu">
-                <li><a href="semantic-part-1.html" target="_blank">Lab #2 Part 1</a></li>
-                <li><a href="semantic-part-2.html" target="_blank">Lab #2 Part 2</a></li>
-                <li><a href="tables-forms-assign.html" target="_blank">Lab #3</a></li>
-                <li><a href="grid-flex-demo.html" target="_blank">Lab #4</a></li>
-                <li><a href="project-2.html" target="_blank">Final Project</a></li>
-            </ul>
-        </li>
-
-    </ul>
-</nav>
-
+                <ul class="nav-list">
+                    <li><a class="nav-btn" href="semantic-part-1.html" target="_blank">Lab #2 Part 1</a></li>
+                    <li><a class="nav-btn" href="semantic-part-2.html" target="_blank">Lab #2 Part 2</a></li>
+                    <li><a class="nav-btn" href="tables-forms-assign.html" target="_blank">Lab #3</a></li>
+                    <li><a class="nav-btn" href="grid-flex-demo.html" target="_blank">Lab #4</a></li>
+                    <li><a class="nav-btn" href="project-2.html" target="_blank">Final Project</a></li>
+                </ul>
+            </nav>
         </header>
 
         <main id="main-content">
+
             <!-- ABOUT SECTION -->
             <section id="about">
                 <h2>About Me</h2>
@@ -67,12 +57,13 @@
             <!-- PROJECTS SECTION -->
             <section id="projects">
                 <h2>Class Projects</h2>
+
                 <ul>
                     <li><a href="semantic-part-1.html" target="_blank">Lab #2 Part 1 - Coding & Posting a Web Page - The Basics</a></li>
                     <li><a href="semantic-part-2.html" target="_blank">Lab #2 Part 2 - Coding & Posting a Web Page - The Basics</a></li>
                     <li><a href="tables-forms-assign.html" target="_blank">Lab #3 - Tables, Forms, Tabbed Browsing, and Screen Reading</a></li>
                     <li><a href="grid-flex-demo.html" target="_blank">Lab #4 – Accessible CSS Layout</a></li>
-                    <li><a href="project-2.html" target="_blank">Project – Universal Design Website</a></li>
+                    <li><a href="project-2.html" target="_blank">Final Project – Universal Design Website</a></li>
                 </ul>
             </section>
         </main>
@@ -82,22 +73,6 @@
         </footer>
 
     </div>
-    <script>
-        const dropdown = document.querySelector(".dropdown");
-        const button = dropdown.querySelector("button");
 
-        button.addEventListener("click", () => {
-            const isOpen = dropdown.classList.toggle("open");
-            button.setAttribute("aria-expanded", isOpen);
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener("click", (e) => {
-            if (!dropdown.contains(e.target)) {
-                dropdown.classList.remove("open");
-                button.setAttribute("aria-expanded", "false");
-            }
-        });
-    </script>
 </body>
 </html>
