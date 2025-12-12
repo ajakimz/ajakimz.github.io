@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheyenne Mountain Zoo Redesign Case Study</title>
+  <meta name="description" content="UX case study: redesign of the Cheyenne Mountain Zoo ticket purchase flow — research, prototypes, testing, and final designs by Aja Kimsey.">
+  <link rel="stylesheet" href="/ux1/final-project.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1>Cheyenne Mountain Zoo — Case Study</h1>
+    </div>
+
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="#overview">Overview</a>
+      <a href="#research">Research</a>
+      <a href="#design">Design</a>
+      <a href="#results">Results</a>
+      <a href="#reflection">Reflection</a>
+    </nav>
+  </header>
+
+  <!-- HERO / COVER IMAGE -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Cheyenne Mountain Zoo  Website Redesign</h1>
+    </div>
+  </section>
+
+  <main id="content" class="site-main">
+
+    <!-- Project Introduction -->
+    <section id="overview" class="section">
+      <h2>Project overview</h2>
+      <p class="lead">This project focused on redesigning the Cheyenne Mountain Zoo’s online ticket-purchasing flow to create a simpler, clearer, and guest-friendly experience. It was important because the original process caused confusion, frustration, and unnecessary steps that increased cognitive load for users. The outcome was a streamlined, high-fidelity prototype that reduced redirects, clarified pricing and totals, and improved overall user confidence and satisfaction.</p>
+
+      <div class="meta">
+        <div>
+          <strong>Role</strong>
+          <p>Lead UX researcher and designer — responsible for research, wireframes, high-fidelity prototype, and usability testing.</p>
+        </div>
+        <div>
+          <strong>Challenges</strong>
+          <p>The main problem I aimed to solve was reducing friction and confusion in the zoo's ticket purchasing process, allowing users to complete a guest checkout quickly and confidently. Limitations included working with an existing website structure, restricted access to live user data, and balancing detailed usability testing with a tight project timeline. Despite these constraints, the redesign focused on clarity, consistent interactions, and improved progress feedback.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="section">
+      <h2>Research</h2>
+      <h3>Usability testing of current experience</h3>
+      <p>I performed usability tests on the Cheyenne Mountain Zoo's live site to identify pain points in the ticket purchase flow. Participants were asked to locate ticket options, select a date/time, choose ticket quantities for two adults, and complete checkout as a guest. Some pain points included:</p>
+
+      <ul class="findings">
+        <li><strong>Unclear ticket access:</strong> Users were unsure whether to click "Plan a Visit," "Get Tickets," or "Buy Non-Member Tickets," creating hesitation at the start.</li>
+        <li><strong>Multiple redirects:</strong> Clicking tickets often opened new tabs or pages, disrupting flow and causing confusion.</li>
+        <li><strong>Overly long pages:</strong> Users had to scroll extensively to see options and confirm selections, increasing cognitive load.</li>
+        <li><strong>Inconsistent date/time selection:</strong> The pickers for date and time were not intuitive or standardized, leading to errors or second-guessing.</li>
+        <li><strong>Lack of pricing transparency:</strong> Seasonal pricing, taxes, and totals were not immediately visible, leaving users unsure of final costs.</li>
+        <li><strong>Ambiguous affordances:</strong> Buttons, checkboxes, and links did not always appear clearly clickable, reducing user confidence.</li>
+      </ul>
+
+      <h3>How might we</h3>
+      <p><em>How might we simplify and clarify the ticket-buying journey so visitors can complete a guest checkout for two adult tickets in fewer steps and with greater confidence?</em></p>
+
+      <h3>Evidence & artifacts</h3>
+      <div class="media-grid">
+        <div class="image-container">
+          <video controls>
+            <source src="/ux1/photos/original-design.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Original purchase a ticket flow</figcaption>
+        </div>
+        <div class="image-container">
+          <img src="/ux1/photos/original-testing.png">
+          <figcaption>Usability testing notes</figcaption>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design -->
+    <section id="design" class="section">
+      <h2>Design & iterations</h2>
+
+      <h3>Problem statement</h3>
+      <p>Visitors to the Cheyenne Mountain Zoo need a clearer, more streamlined online ticketing process because the current system is confusing, not mobile-friendly, and slows down their ability to purchase tickets.</p>
+
+      <h3>Proposed task flow</h3>
+      <p>For the proposed task flow, I mapped out a streamlined process that reduced the number of steps and kept users on a single page rather than redirecting to new tabs. I combined related actions, such as selecting date, time, and ticket quantity, into a cohesive screen to minimize cognitive load. The flow also included clear progress indicators and a guest-first option to respect users who prefer not to create an account. Overall, the goal was to make the ticket-purchasing journey faster, more intuitive, and easier to understand for first-time visitors.</p>
+      <!-- <ol class="task-list">
+        <li>Homepage</li>
+        <li>Ticket pop-up (log in / continue as guest)</li>
+        <li>Date, time, and ticket quantity (single cohesive screen)</li>
+        <li>Personal & billing information</li>
+        <li>Review order (taxes and totals visible)</li>
+        <li>Confirmation</li>
+      </ol> -->
+      <div class="image-container"><img src="/ux1/photos/task-flow.png" alt="Proposed task flow of redesign"></div>
+
+      <h3>Low fidelity</h3>
+      <p>For the low-fidelity stage, I sketched rough wireframes on paper to map out the main user flow and overall layout. I focused on the placement of key elements like ticket options, date/time selectors, and navigation. These sketches helped me quickly explore ideas and identify potential pain points before investing time in digital design.</p>
+        <div class="image-container">
+          <img src="/ux1/photos/low-1.png">
+        </div>
+        <div class="image-container">
+          <img src="/ux1/photos/low-2.png">
+        </div>
+        <div class="image-container">
+          <img src="/ux1/photos/low-3.png">
+        </div>
+
+      <h3>Mid fidelity</h3>
+      <p>In the mid-fidelity stage, I moved the wireframes into Figma and created a digital version with basic typography, shapes, and structure. I refined spacing, alignment, and button placement while keeping visual styling minimal. This allowed me to get feedback from my peers and professor and gather early feedback without distraction from colors or images.</p>
+      <div class="image-container">
+          <img src="/ux1/photos/mid-1.png">
+        </div>
+        <div class="image-container">
+          <img src="/ux1/photos/mid-2.png">
+        </div>
+        <div class="image-container">
+          <img src="/ux1/photos/mid-3.png">
+        </div>
+
+      <h3>High fidelity</h3>
+      <p>For the high-fidelity prototype, I added visual design, color, typography, and realistic interface elements to closely mimic the final experience. I incorporated branding, hover states, and interactive components to simulate a real ticket-purchasing flow. This version was used for usability testing to validate design decisions and gather actionable insights.</p>
+      <div class="image-container">
+          <img src="/ux1/photos/high-1.png">
+        </div>
+        <div class="image-container">
+          <img src="/ux1/photos/high-2.png">
+        </div>
+        <div class="image-container">
+          <img src="/ux1/photos/high-3.png">
+        </div>
+
+      <h3>High-fidelity prototype</h3>
+      <p>The high-fidelity prototype integrated all finalized visual elements with interactive functionality to closely simulate the real user experience. It allowed users to navigate through the ticket-purchasing flow, select dates and quantities, and see dynamic feedback as if the system were live. This prototype was tested with participants to identify usability issues, confirm clarity, and ensure the flow met user expectations before final implementation.</p>
+      <p><strong>Link to prototype:</strong> <a id="prototype-link" href="https://www.figma.com/proto/0EIaOSL8sFfMwbNJrBf08x/Aja-Kimsey-s-UX1-Figma-File?page-id=1%3A61&node-id=2314-16332&viewport=-1445%2C-1156%2C0.46&t=4H068f7n2z5WidwU-1&scaling=min-zoom&content-scaling=fixed" target="_blank" rel="noopener">Redesigned Prototype</a></p>
+      <div class="image-container">
+          <video controls>
+            <source src="/ux1/photos/prototype.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Walk through of redesigned purchased a ticket flow</figcaption>
+        </div>
+
+      <h3>Instructor feedback</h3>
+      <p>I recieved several recommended improvements to enhance clarity, usability, and accessibility. These included reducing heading sizes to establish a clearer hierarchy, clarifying the behavior of date/time dropdowns, and ensuring all primary action buttons had consistent colors and hover states. Feedback also emphasized providing early visibility of taxes and totals, adding progress indicators, improving spacing and padding for form elements, and labeling optional fields clearly. Additional suggestions included accessibility enhancements, such as keyboard navigation, color contrast, alt text for images, and ensuring the design is responsive across devices.</p>
+    </section>
+
+        <!-- User Testing & Updates -->
+    <section id="results" class="section">
+    <h2>Results & evaluation</h2>
+    <p>To evaluate the redesigned prototype, I conducted three usability tests with participants completing a guest ticket purchase for two adults. Users were asked to navigate the prototype, select a date/time, set ticket quantities, and complete checkout, all while thinking aloud. Key pain points identified included:</p> 
+    <ul>
+        <li>Seasonal pricing needed clearer explanations.</li>
+        <li>Some actions used inconsistent color treatments.</li>
+        <li>Users expected to see taxes earlier in the flow.</li>
+        <li>Users wanted stronger affordances on clickable cards.</li>
+    </ul>
+    <div class="image-container">
+        <img src="/ux1/photos/user-testing.png">
+        <figcaption>Usability testing notes</figcaption>
+    </div>
+
+    <h3>Updates</h3>
+    <p>Based on this feedback, I standardized button colors and updated the Back/Next hierarchy, added explanatory copy for seasonal pricing, moved tax/total previews earlier in the flow, and enhanced hover states and visual cues for interactive elements. These changes improved clarity, reduced cognitive load, and increased confidence in completing the ticket purchase quickly and accurately.</p>
+    </section>
+
+    <!-- Reflection -->
+    <section id="reflection" class="section">
+      <h2>Reflection</h2>
+
+      <h3>Future plans</h3>
+      <p>Next steps include additional moderated testing with 5–8 participants, exploring mobile-specific flows, and testing alternative payment options like Apple Pay if analytics show demand. Additionally, I would want to add more content to the main homepage, since there isn't that much content currently on it. I would also conduct an accessibility audit to ensure WCAG AA compliance for contrast and keyboard navigation.</p>
+
+      <h3>Conclusion</h3>
+      <p>Through this project, I learned the importance of iterative testing to uncover subtle pain points and validate design decisions. Consistency in visual design, clear affordances, and early transparency of information greatly improve user confidence and reduce friction. Overall, the project reinforced that thoughtful UX design directly impacts the efficiency and satisfaction of the end-to-end user experience.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Aja Kimsey</p>
+  </footer>
+
+  <script src="/ux1/final-project.js"></script>
+</body>
+</html>
