@@ -1,0 +1,33 @@
+/* Mobile-friendly hero refinements. !important is intentional because this file is imported before legacy base rules. */
+.hero h1 { letter-spacing: -0.035em !important; line-height: 0.9 !important; }
+.hero-image img { object-position: 50% 39% !important; }
+@media (max-width: 800px) {
+  .hero h1 { font-size: clamp(76px, 22vw, 116px) !important; letter-spacing: -0.025em !important; line-height: 0.94 !important; }
+  .hero-image { height: auto !important; min-height: 0 !important; aspect-ratio: 4 / 5 !important; }
+  .hero-image::after { inset: 12px !important; }
+  .hero-image img { height: 100% !important; object-position: 50% 34% !important; }
+  .hero-copy > p:not(.eyebrow) { font-size: 18px !important; }
+  .button { min-height: 48px !important; display: inline-flex !important; align-items: center !important; }
+  .site-header { gap: 18px !important; flex-wrap: wrap !important; }
+  .wordmark { white-space: nowrap !important; }
+}
+
+/* Consistent display-heading rhythm across every page. */
+.projects-page h1, .about-page h1, .case-study h1 { letter-spacing: -0.035em !important; line-height: 0.92 !important; }
+.hero .eyebrow { display: none; }
+.zoo-case section { max-width: 760px; padding: 52px 0; border-top: 2px solid var(--line); }
+.zoo-case section:first-of-type { border-top: 0; }
+.zoo-case section h2 { margin: 0 0 20px; }
+.zoo-case section h3 { font: 500 28px/1.05 Fraunces, serif; letter-spacing: -0.03em; margin: 32px 0 12px; }
+.zoo-case li { margin: 10px 0; }
+.project-accessibility { background: #d9c8e8; }
+.project-oit { background: #bfd8df; }
+@media (max-width: 800px) { .projects-page h1, .about-page h1, .case-study h1 { line-height: 0.96 !important; letter-spacing: -0.025em !important; } .zoo-case section { padding: 38px 0; } }
+
+/* Make the next section discoverable while keeping the hero legible. */
+.hero { min-height: 380px !important; grid-template-columns: 1.35fr .65fr !important; }
+.hero-copy { padding-top: 40px !important; padding-bottom: 40px !important; }
+.hero-image { min-height: 380px !important; }
+.hero-image::after { inset: 10px !important; }
+.site-header a:focus-visible, main a:focus-visible { outline: 3px solid #263b28; outline-offset: 4px; text-decoration: underline; }
+@media (max-width: 800px) { .hero { min-height: 0 !important; grid-template-columns: 1fr !important; } .hero-image { min-height: 180px !important; height: 180px !important; aspect-ratio: auto !important; } .hero-copy { padding-top: 42px !important; padding-bottom: 42px !important; } }

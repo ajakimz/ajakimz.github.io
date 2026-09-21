@@ -1,0 +1,363 @@
+﻿UX AUDIT REPORT
+United Nations Children's Fund  |  unicef.org
+
+
+Aja Kimsey
+UX2 Student  |  University of Colorado Boulder
+ajki5822@colorado.edu
+
+
+April 2026
+________________
+
+
+Table of Contents
+Table of Contents        2
+Part 1 — Introduction        4
+About the Auditor        4
+What Is a UX Audit?        4
+Audit Objective        4
+Business Context        4
+Scope of Audit        5
+Part 2 — Evaluations & Findings        7
+2.1  Visual Design Evaluation        7
+How Users Are Guided Through the Page        7
+Visual Hierarchy and the Donate Button        8
+Cognitive Biases in the Design        8
+Color, Contrast, and Accessibility        9
+Typography and Heading Structure        9
+Imagery and Alt Text        9
+Feedback and Interactive States        10
+2.2  Heuristic Evaluation        10
+Consistency and Standards → Strength        10
+Recognition Over Recall → Strength        10
+Visibility of System Status → Opportunity        10
+User Control and Freedom → Opportunity        11
+Error Prevention and Recovery → Opportunity        11
+Aesthetic and Minimalist Design → Opportunity        11
+Help and Documentation → Opportunity        12
+2.3  Accessibility Evaluation        12
+Color Contrast        12
+Heading Structure        12
+Image Accessibility        13
+Redundant and Unclear Links        13
+Keyboard Navigation and Focus Indicators        13
+2.4  Content Evaluation        14
+Above the Fold: Missing Organizational Context        14
+Donation Call-to-Action Wording        15
+Form Validation and Error Messaging        15
+Donation Flow: No Progress Indicator        16
+Transition to UNICEF USA: A Trust Risk        16
+Content Strengths        17
+2.5  Information Architecture Evaluation        17
+What Was Found        17
+Recommendations        18
+2.6  User Journey Evaluation — Donation Task Flow        19
+Monthly Giving: Consequences Not Explained        20
+Strengths of the Donation Flow        20
+Part 3 — Recommendations Recap        21
+Priority 1 — Critical: Highest Impact on Trust and Conversion        21
+Priority 2 — Important: Significant Usability and Accessibility Improvements        21
+Priority 3 — Enhancements: Improving Clarity and Discoverability        23
+Part 4 — Closing Reflections        24
+What This Audit Revealed        24
+Recommended Next Steps        24
+Closing Thought        25
+
+
+________________
+
+
+Part 1 — Introduction
+About the Auditor
+My name is Aja Kimsey, and I am a UX2 student at the University of Colorado Boulder. This audit was completed as part of my User Experience 2 coursework, in which I conducted a semester-long, in-depth review of a real-world website using professional UX evaluation methods.
+I chose UNICEF as my audit subject because of the organization's global scale, the diversity of people it needs to reach, and the high stakes of getting the user experience right. When a website's purpose is to communicate humanitarian impact and convert caring people into active supporters or donors, clarity and trust are not just design goals, but are moral responsibilities. I wanted to apply my skills to an organization doing genuinely important work, and to offer observations that could make a real difference in how effectively that work is communicated online.
+What Is a UX Audit?
+A user experience (UX) audit is a structured, evidence-based review of a website or digital product. Its goal is to identify how well the experience serves the people who use it, and where that experience could be improved.
+Rather than relying on personal opinion, a UX audit uses a set of established evaluation methods (such as heuristic reviews, accessibility testing, content analysis, and user research exercises) to generate findings grounded in real evidence. The result is a clear picture of what is working, what is not, and what specific changes would have the greatest positive impact.
+This audit is designed to be useful for UNICEF's web team and stakeholders, even if you have no prior UX background. Technical terms are explained as they appear throughout the document.
+Audit Objective
+The objective of this audit is to evaluate how clearly the UNICEF website communicates its mission, programs, and global impact to potential donors and supporters. Specifically, this review seeks to identify opportunities to improve clarity and understanding so that users can more easily comprehend UNICEF's work and feel confident engaging with the organization; whether that means reading about programs, signing up for updates, or completing a donation.
+Business Context
+UNICEF (the United Nations Children's Fund) is one of the world's leading humanitarian organizations, working in over 190 countries and territories to protect the rights and wellbeing of children. The organization's website, unicef.org, serves as a mission-driven platform designed to inform users about global humanitarian issues while encouraging them to support the cause through donations, advocacy, and education.
+Primary Audience: The main users of this site are socially conscious adults (including potential donors and advocates) who value transparency, impact reporting, and credible information. They are motivated by social impact and global humanitarian concerns, and they typically seek both an emotional connection to the cause and trustworthy, factual evidence before choosing to engage or contribute.
+Content Mix: The site features a blend of impact stories, statistics, reports, articles, videos, photography, and donation-related content. This combination is intended to balance emotional storytelling with factual information, supporting both awareness-building and decision-making.
+Design Approach: The site uses strong visual storytelling, a clean and structured layout, consistent branding, and large hero imagery (the big, full-width photograph or video at the top of a page). These design choices support user understanding and engagement, but the sheer breadth of information and global scope can feel overwhelming for first-time visitors.
+Key Features: Core features include donation tools, navigation menus, search functionality, access to reports and data, and multimedia storytelling elements. These are designed to guide users from awareness to action, supporting UNICEF's organizational goals.
+Given UNICEF's global audience, accessibility is a critical consideration throughout this audit. The site must support diverse user needs through clear visual hierarchy, readable typography, accessible navigation, multilingual support, and compatibility with assistive technologies such as screen readers.
+Scope of Audit
+This audit focuses on key navigational elements and core pages that shape first impressions and support user decision-making on the UNICEF website. The following areas were selected because they represent the most critical touchpoints for the organization's two most important user goals: understanding UNICEF's mission and completing a donation.
+* Primary Navigation: Evaluates how clearly UNICEF's main sections, mission, and calls to action (prompts that encourage a specific user action) are presented and prioritized for users upon arrival.
+* Sub-Navigation: Assesses how UNICEF organizes its wide range of programs and global initiatives within deeper sections of the site.
+* Footer Navigation: Examines access to supporting information such as organizational details, transparency resources, and credibility-building content that may influence user trust.
+* Mobile Navigation: Ensures users on mobile devices can easily navigate the site, access key information, and complete important actions such as donating.
+* Homepage: The primary entry point for users, where first impressions are formed and the organization's mission, impact, and calls to action are introduced.
+* "What We Do" Page: Evaluates how effectively UNICEF explains its mission, global programs, and impact to users seeking to understand the organization's work.
+* Donation Page: A critical conversion page (where users decide whether to take action) where clarity, trust, and ease of use are essential.
+* Donation Task Flow (Homepage → Donate → Donation Selection → Donor Information → Payment/Confirmation): Assesses how smoothly users can move from learning about UNICEF's mission to completing a donation — the action that most directly supports the organization's goals.
+A Note on Persona
+This audit was informed by a primary user persona of a research-oriented student with limited time who approaches the site as a cautious first-time visitor evaluating UNICEF before choosing to engage. This persona shaped the lens through which barriers and friction points were identified throughout the evaluation.
+	  
+
+	Part 2 — Evaluations & Findings
+This section presents the five evaluation methods used in this audit, along with the findings from each. Where relevant, recommendations are embedded directly following the finding they address, so that the connection between problem and solution is always clear. A consolidated list of all recommendations also appears in Part 3.
+2.1  Visual Design Evaluation
+A visual design evaluation examines the appearance and structure of a website, such as how information is laid out, how color and typography guide the eye, how imagery shapes emotional responses, and whether design choices support or hinder the user's ability to find and understand information. This evaluation also looks at cognitive biases, which are the predictable patterns in human thinking that design can either work with or unintentionally work against.
+How Users Are Guided Through the Page
+The UNICEF homepage opens with a large hero section of a full-width image paired with a headline and a "Learn more" button. This creates a strong starting point that immediately draws attention and sets an emotional tone. The overall layout follows a logical top-to-bottom flow with a consistent grid structure, making it easy for users to scan sections and understand where content is grouped.
+However, the middle sections of the homepage become content-dense, with multiple story cards and campaign modules appearing in the same vertical area. When several pieces of content compete for attention at once, users may struggle to determine what to focus on. This increases cognitive load (the mental effort required to process information) and can make browsing feel more overwhelming than it needs to be.
+  
+
+Figure: Screenshot of the mid-homepage section showing the dense card layout
+Visual Hierarchy and the Donate Button
+Visual hierarchy refers to the order in which a user's eye is drawn to elements on a page. A strong visual hierarchy ensures that the most important elements are the most visible.
+The homepage hero does a good job of establishing hierarchy at the top of the page. However, lower on the page, the visual emphasis placed on the primary donation action is weaker than expected for an organization that depends heavily on donations. The "Donate" button sits in the top-right corner of the navigation bar (a familiar position for this type of call to action) but its styling does not create enough visual contrast to make it stand out. Because most of the interface uses a lot of white, the donation button blends into the surrounding design rather than drawing the eye as the primary conversion action.
+Orange appears only sparingly as an accent color (primarily in the footer's "Become a donor" button and the global navigation’s “Donate” button) and is not used to elevate the primary call-to-actions. Stronger use of contrast in this area would better signal its importance.
+Recommendation
+Increase the visual contrast of the primary "Donate" button in the navigation bar. Consider updating the label to "Donate Now" to add urgency and differentiate it from surrounding elements. Extending more of a consistent accent color to this element would help it stand out from the white-dominant interface.
+	Cognitive Biases in the Design
+Design choices on the UNICEF website reflect several well-documented patterns in human psychology. Understanding these patterns helps explain both the strengths and the potential blind spots of the current design.
+* Confirmation Bias — The homepage leads with crisis-focused headlines and emotionally compelling images of children, reinforcing the beliefs of visitors who already support UNICEF's mission. This creates strong emotional resonance for sympathetic audiences but provides limited immediate access to neutral data or financial transparency for users who prefer a more analytical first impression.
+* Anchoring Bias — Emergency campaign content is the first thing users see on the homepage, which frames UNICEF primarily as an emergency-response organization. Users who arrive without prior knowledge of the organization may leave with a narrow understanding of its broader work in education, development, and long-term child welfare.
+* False Consensus Bias — Advocacy language such as "Advocate for children" and "Leave your mark" assumes that users already share UNICEF's sense of moral urgency. For visitors who are still learning about the organization or gathering information, this messaging can feel presumptuous rather than welcoming.
+* Recency Bias — Current crises and breaking news are prominently featured, while long-term prevention and development programs are placed further down the page or in secondary navigation areas. Casual visitors may leave with the impression that UNICEF only reacts to crises rather than working proactively to prevent them.
+* Framing Bias — Child-centered imagery and emotionally charged narratives encourage users to connect personally with the cause and respond quickly with donations or advocacy. While this is effective for emotional engagement, it provides fewer opportunities for users to evaluate program outcomes more critically before acting.
+* Status Quo Bias — The site relies on familiar nonprofit design conventions, such as the donation-first layouts, predictable call-to-action placements, and traditional navigation. These patterns are usable and familiar, but they limit opportunities for more innovative engagement experiences that might appeal to younger or more digitally native audiences.
+Color, Contrast, and Accessibility
+Two shades of blue dominate the interface, creating strong brand consistency but limiting the use of color as a tool for guiding attention across different content areas. In the footer, black text appears against a bright blue background, which reduces contrast between text and background. This may create readability difficulties for users with low vision or contrast sensitivity.
+Interactive elements rely primarily on color and text labels rather than combining these with supporting icons. Users who rely on quick visual scanning, including those on mobile devices or with cognitive differences, may find it harder to identify interactive elements at a glance.
+Recommendation
+Improve contrast in the footer by adjusting either the text color or background color to meet WCAG AA accessibility guidelines (a minimum contrast ratio of 4.5:1 for normal text). Consider pairing key interactive elements with supporting iconography to improve scannability.
+	Typography and Heading Structure
+Typography across the site is legible and professional. Clear distinctions between headings, subheadings, and body text help users scan pages and locate information quickly. However, automated accessibility testing revealed that heading levels occasionally skip. For example, jumping from a Heading Level 2 (H2) directly to a Heading Level 4 (H4), bypassing H3. Headings serve as a navigation structure for screen readers (software that reads page content aloud for users with visual impairments). When heading levels are skipped, this structure is disrupted, making it harder for screen reader users to understand the layout of the page.
+Recommendation
+Audit and correct heading hierarchy across all pages to ensure levels are used in sequential order (H1 → H2 → H3) without skipping. This is a low-effort, high-impact accessibility fix.
+	Imagery and Alt Text
+Photography plays a central role in UNICEF's storytelling, reinforcing emotional engagement and helping users connect with the human impact of the organization's work. However, accessibility implementation for images is inconsistent. Some images include descriptive alt text (a short written description of an image that screen readers can announce), while others have empty or missing alt attributes. Several linked images within the "Spotlight" story card section on the homepage have empty alt attributes, preventing screen readers from identifying what the image is or where the link leads.
+Recommendation
+Conduct a full audit of image alt text across all evaluated pages. Every image that conveys meaningful information (especially every image that functions as a link) should have a concise, descriptive alt text. Avoid both empty attributes and excessively long descriptions.
+	Feedback and Interactive States
+When users hover over or click on interactive elements, visual feedback helps confirm that the element is clickable and that the action was registered. On the UNICEF site, hover states (the visual change that occurs when a cursor moves over a button or link) are inconsistent. The primary "Donate" button in the navigation bar shows minimal visual change on hover (lacking a noticeable color shift or animation) which reduces the sense of interactivity. Dropdown menus also provide limited visual signaling before a user has interacted with them, which may reduce discoverability.
+Recommendation
+Strengthen hover states and click feedback on the primary donation button and dropdown navigation menus. Even subtle animations or color changes significantly improve perceived interactivity and user confidence.
+	2.2  Heuristic Evaluation
+A heuristic evaluation is a structured usability review in which an evaluator examines a website against a set of established usability principles, known as heuristics. These principles, developed through decades of user research, represent best practices for how digital interfaces should behave. Rather than testing with live users, this method allows a trained reviewer to identify usability problems efficiently by checking the interface against each principle.
+The following evaluation uses Nielsen's 10 Usability Heuristics, one of the most widely recognized frameworks in the UX field.
+Consistency and Standards → Strength
+Typography, color usage, photography style, and layout patterns remain largely uniform throughout the site, reinforcing a cohesive visual system and professional credibility. The navigation bar appears persistently at the top of every page, and the UNICEF logo consistently returns users to the homepage. These repeated patterns reduce cognitive effort, as the users do not need to re-learn the interface as they move between sections.
+Recognition Over Recall → Strength
+Menu categories are clearly labeled with descriptive terms that communicate their purpose without requiring users to memorize previous navigation paths. On many interior pages, breadcrumb navigation (a trail showing a user's location within the site, such as "Home > What We Do > Education") helps users orient themselves and navigate backward easily.
+Visibility of System Status → Opportunity
+When users navigate between pages, the interface provides minimal feedback indicating that a page is loading. The only visible indication is the browser's default tab loading animation, a small spinner in the browser tab. Within the donation popup window, skeleton loading states (grey placeholder shapes that appear while content loads) briefly appear, but similar feedback mechanisms are absent across the rest of the site. On slower connections, users may be left wondering whether their click was registered.
+Recommendation
+Add visible loading indicators or progress states throughout the site, particularly after user-initiated actions such as clicking navigation links or submitting forms. Consistent feedback reduces uncertainty and builds trust.
+	User Control and Freedom → Opportunity
+Clicking the "Donate" button in the top-right navigation opens a modal window (a pop-up overlay that appears on top of the current page). While a close button exists in the top-right corner of the screen, its placement appears visually separated from the modal container itself, which may make it harder to locate. Additionally, clicking outside of the modal does not close it, a behavior that many users now expect based on common web conventions. This creates minor friction for users who want to quickly exit the donation interaction and continue browsing.
+Recommendation
+Ensure the modal close button is visually connected to the modal container and clearly visible. Enable click-outside-to-dismiss behavior to match modern user expectations and reduce friction.
+	Error Prevention and Recovery → Opportunity
+On both the donation flow and the newsletter sign-up form, error detection happens only after a user attempts to submit. For example, entering an incorrectly formatted email address does not trigger a warning until after the user clicks the submission button. When errors do appear, the interface marks the field with a red highlight but does not always provide a clear explanation of what the problem is, and users may see a field marked as invalid without being told what correct formatting looks like.
+In contrast, the site handles broken links well, as the 404 error page (shown when a page cannot be found) presents a clear message and a direct link back to the homepage, helping users recover quickly.
+Recommendation
+Implement real-time, inline validation on all forms, that has validation that checks input as the user types and provides clear, specific guidance when something is incorrect. For example: "Please enter a valid email address (e.g., name@example.com)." This reduces form abandonment and frustration.
+	Aesthetic and Minimalist Design → Opportunity
+The site prioritizes visual storytelling through large photographs, which aligns well with UNICEF's humanitarian mission. However, on desktop screens, certain hero images occupy so much of the initial viewport (the visible area of the screen without scrolling) that users must scroll before encountering substantive text or informational content. Some informational pages, by contrast, contain dense blocks of text without strong visual segmentation. This variation in content density creates inconsistencies in reading flow.
+Help and Documentation → Opportunity
+FAQ pages and contact information exist on the site, but these resources are primarily located in the footer, and therefore are visually small and easy to overlook. While some individual program pages include visible FAQ sections, the primary support resources remain relatively hidden within the site's structure.
+Recommendation
+Increase the visibility of help and contact resources by surfacing links in the main navigation or within relevant content sections. Particularly on the donation page, where user questions are most likely to arise.
+	2.3  Accessibility Evaluation
+An accessibility evaluation assesses how well a website can be used by people with a wide range of abilities, including users with visual impairments, motor disabilities, cognitive differences, or those using assistive technologies such as screen readers or keyboard-only navigation.
+This evaluation combined automated testing tools (which scan pages for known accessibility errors) with manual testing, including screen reader navigation and keyboard-only browsing. Pages evaluated include the homepage, the "What We Do" page, and the donation flow.
+Accessibility is evaluated against WCAG (Web Content Accessibility Guidelines), the internationally recognized standard for digital accessibility. Meeting WCAG AA (the intermediate level) is typically considered the minimum standard for public-facing websites.
+Color Contrast
+Low color contrast is the most consistent accessibility issue found across all evaluated pages. Automated testing identified 28 contrast errors on the "What We Do" page, which are primarily in sections displaying small text over colored backgrounds. In the global header, the UNICEF logo renders in white (#FFFFFF) on a light blue background (#00AEEF), a combination that does not provide sufficient contrast for small text, potentially reducing readability for users with low vision.
+Recommendation
+Run the site against the WCAG AA contrast ratio requirements (4.5:1 for normal text, 3:1 for large text) and prioritize fixing the highest-error pages first of the donation page and "What We Do" page. The logo contrast issue in the header is particularly high-priority given its presence on every page.
+	Heading Structure
+Several pages contain skipped heading levels (such as jumping from H2 to H4 without an H3) or empty heading elements that provide no content. On the first donation page, a Heading Level 3 (H3) label appears before a Heading Level 2 (H2) section header, inverting the expected hierarchy. Screen readers use heading levels to build a mental map of a page's structure; when those levels are out of order or missing, users navigating by heading cannot rely on this map.
+Additionally, the homepage lacks a Heading Level 1 (H1) at the top-level heading that introduces the primary topic of a page. First headings begin at H2, which disrupts the navigational structure for screen reader users.
+Recommendation
+Conduct a semantic HTML audit across all pages to correct the heading hierarchy. Ensure every page has a single, descriptive H1, and that subsequent headings follow a logical, sequential order. This is one of the highest-value, lowest-effort accessibility improvements available.
+	Image Accessibility
+Image alt text implementation is inconsistent across evaluated pages. Some linked images, particularly in the Spotlight story card section on the homepage, have empty alt attributes, meaning screen readers cannot determine what the image depicts or where the link leads. Other images have alt text descriptions that are excessively long, which can overwhelm screen reader users when navigating through repeated content cards.
+Recommendation
+Apply a consistent alt text standard: decorative images should have empty alt attributes (alt="") so screen readers skip them; meaningful images and all linked images should have concise, descriptive alt text (1–2 sentences at most); redundant or excessively long descriptions should be shortened.
+	Redundant and Unclear Links
+On the "What We Do" page, multiple adjacent links within the same content card lead to the same destination. For example, both the card title "Education" and the associated photo above the title navigate to the same page. For screen reader users, this creates duplicate navigation paths that must be tabbed through individually. In other areas, identical link text (such as repeated "Learn more" labels) points to different destinations, which creates confusion for users who rely on screen readers that present links out of context.
+Recommendation
+Consolidate linked card elements into a single clickable component to eliminate duplicate navigation paths. Replace generic link text like "Learn more" with descriptive alternatives such as "Learn more about UNICEF's education programs." This helps all users, but is also especially critical for screen reader users.
+	Keyboard Navigation and Focus Indicators
+Both the homepage and the "What We Do" page support keyboard navigation and include a visible "Skip to main content" link (a best practice that allows keyboard users to bypass navigation menus and jump directly to the page content). However, card-based sections create multiple tab stops per single visual card. A user navigating by keyboard must tab through separate stops for each card's image, title, description text, and "Read more" link individually, even though visually these function as a single unit.
+The donation page presents more significant challenges: several interactive elements lack visible focus indicators, making it difficult for keyboard-only users to determine which element is currently selected. Screen reader testing also revealed instability on the donation page, as the reader became stuck after interacting with several elements near the top of the page, preventing further navigation.
+Recommendation
+Refactor card components to function as single keyboard-navigable units, reducing the number of tab stops required. Add visible focus indicators to all interactive elements on the donation page. Conduct targeted screen reader testing on the donation page to identify and resolve the navigation instability.
+	2.4  Content Evaluation
+A content evaluation examines the words, labels, error messages, confirmation text, and micro-copy (small pieces of instructional or contextual text) used throughout a website. It assesses whether content is clear, accurate, appropriately timed, and organized in a way that helps users make decisions and complete tasks with confidence.
+Above the Fold: Missing Organizational Context
+The single highest-priority content finding in this audit is the absence of clear organizational context above the fold, that is, in the portion of the homepage visible before scrolling. Upon first loading the UNICEF homepage, the visible content is a hero image with the headline "Humanitarian appeal 2026" and the subheading "UNICEF calls for urgent investment as humanitarian needs reach new extremes," accompanied by a "Learn more" button.
+While this messaging communicates urgency effectively, it does not clearly explain what UNICEF is or what the organization does. There is no introductory statement identifying UNICEF as a global humanitarian organization focused on children's rights. A first-time visitor could reasonably interpret this page as an informational article or a campaign page rather than the homepage of one of the world's largest children's organizations.
+Compounding this, the acronym "UNICEF" is used throughout the homepage and navigation but is never expanded. The full name, United Nations Children's Fund, does not appear anywhere on the homepage. For users unfamiliar with the organization, this omission may create confusion about what they are looking at and who they are potentially donating to.
+Recommendation
+Add a brief, plain-language organizational descriptor above the fold, either as a subheading within the hero section or as a persistent statement near the top of the page. At minimum, expand the UNICEF acronym to its full name at least once on the homepage. For example: "UNICEF (the United Nations Children's Fund) works in over 190 countries to protect every child's rights."
+	  
+
+Figure: The ‘above the fold’ of the homepage of UNICEF
+Donation Call-to-Action Wording
+The primary donation button in the global navigation is labeled simply "Donate." While clear, this wording lacks urgency. Adding immediacy to a call-to-action label is a well-established content strategy for conversion-oriented buttons, as the difference between "Donate" and "Donate Now" has been shown in UX research to influence click-through rates, particularly in charitable contexts where users may be on the fence about acting.
+Recommendation
+Update the primary donation call-to-action from "Donate" to "Donate Now" to convey urgency and reinforce the importance of the action.
+	Form Validation and Error Messaging
+Error detection in both the donation form and the newsletter sign-up form occurs only after submission. If a user leaves required fields empty or enters an invalid email address, they must click "Submit" or "Continue" before the system flags the problem. This post-submission approach increases frustration by asking users to do more work, as they must submit, notice the error, understand what went wrong, correct it, and resubmit.
+When errors do appear, the newsletter sign-up form highlights fields with a red outline only, without explanatory text. Users may not immediately understand what needs to be corrected or what format is expected.
+Recommendation
+Implement real-time inline validation on all forms, as validation that checks input as users type and provides specific guidance such as "Please enter a valid email address" before submission. For the newsletter form specifically, add text-based error messages alongside red outlines so all users (including those relying on color-blind or screen reader modes) can understand what to fix.
+	Donation Flow: No Progress Indicator
+The donation process involves multiple steps (entering donor details, selecting payment method, and confirming payment) but the interface provides no visible indication of how many steps exist or how far through the process the user currently is. Without a progress indicator (such as "Step 2 of 3" or a progress bar), users cannot gauge how much more time the process will take. This uncertainty is a well-documented driver of form abandonment, particularly on donation forms where users may already feel hesitant.
+Recommendation
+Add a clear, persistent step counter or progress bar to the multi-step donation flow. For example, a simple "Step 1 of 3: Enter your details" label at the top of each step sets expectations and reduces anxiety about the length of the process.
+	Transition to UNICEF USA: A Trust Risk
+When a US-based user clicks the "Donate" button on unicef.org, they are silently redirected to a completely different website: unicefusa.org, which is a separate nonprofit from the global UNICEF organization. The visual style of the two sites differs dramatically as the global site uses a predominantly white background, while the UNICEF USA site uses a predominantly black background, with different typography and a different URL. This abrupt visual change, combined with no bridging message explaining the relationship between the two organizations, is the single highest trust-risk moment in the entire donation journey.
+A first-time donor who notices the domain change may reasonably question whether they have been redirected to a third party or an unsafe site. This concern is amplified by the fact that UNICEF USA is technically a separate nonprofit, and the visual branding does not immediately make this relationship clear.
+Recommendation
+Add a bridging message or interstitial screen when US users are redirected from unicef.org to unicefusa.org. At minimum, include a brief explanation such as: "You are being directed to UNICEF USA, the official U.S. fundraising partner of UNICEF, to complete your donation securely." This small addition could have an outsized impact on donor trust and conversion rates.
+	Content Strengths
+Despite the issues above, several areas of content implementation are effective. Input field labels in the donation form persist as users type, and rather than disappearing when a field is clicked, the label shifts upward and remains visible. This helps users remember what they are filling in without needing to exit the field.
+Button labels are consistently worded and use sentence case throughout the site, making navigation predictable. Article pages demonstrate strong visual hierarchy through bold headings, bullet points, and clear spacing that supports scanning and comprehension. Confirmation messaging after newsletter sign-up is clear and includes a useful next step ("Please check your inbox to confirm your subscription").
+2.5  Information Architecture Evaluation
+Information architecture (IA) refers to how content is organized, labeled, and structured within a website, essentially, the logic behind the navigation. A well-designed IA allows users to quickly find what they are looking for without needing to guess where something is located. A poorly designed IA results in confusion, missed content, and user frustration.
+To evaluate the current IA of the UNICEF website, a closed card sorting exercise was conducted with two participants. Card sorting is a research method in which participants are given a set of cards representing different pages or content areas of a website and asked to group them into categories. A closed card sort (where the category names are provided in advance) allows for direct comparison between how users expect content to be organized and how the website currently organizes it.
+A closed format was chosen over an open sort for two reasons: the large number of cards involved made an open sort impractical in terms of time, and the closed format enabled a more direct comparison with the existing site structure.
+What Was Found
+Overall, the existing navigation structure is largely intuitive, as participants were generally able to sort most cards into recognizable categories, and many of their groupings aligned with the current site structure. However, several patterns of confusion emerged.
+* Country name cards caused consistent confusion: Both participants were uncertain where to place cards labeled with country names (such as individual nations where UNICEF operates). Without additional context, these cards felt ambiguous and it was unclear whether they represented regional programs, news stories, or some other type of content. This suggests that the naming or placement of location-based content on the site may not clearly communicate its purpose to users.
+* Overlap between "Who We Are" and "What We Do": Both participants perceived these two categories as overlapping, and several cards that the site currently places under "Take Action," such as "Community" and "Spotlight," were sorted into "Who We Are" by both participants. This makes intuitive sense: these labels suggest informational or identity-based content, not action-oriented content. The existing category names do not clearly distinguish between them.
+* No card was entirely uncategorizable: Importantly, neither participant felt that any card was impossible to categorize. The issue was not a fundamental mismatch between content and structure, and it was category overlap and naming ambiguity. This is a targeted, fixable problem.
+  
+
+Figure: Current global navigation of UNICEF website
+Recommendations
+Recommendation
+Refine the naming and definitions of the "Who We Are" and "What We Do" navigation categories to make their distinction clearer to users. Consider whether content currently labeled as "Community" or "Spotlight" more logically belongs under identity/information-focused categories rather than action-oriented ones.
+	Recommendation
+Create a dedicated navigation category or sub-section for location-based or region-specific content. Clearly labeled geographic content (rather than bare country names) would help users understand what these sections contain and where they belong within the site's structure.
+	To validate these recommendations, tree testing (a method in which users navigate a text-only version of a proposed navigation structure to find specific content) would be a valuable next step. Usability testing on the revised navigation through observing real users interacting with location-based content and the overlapping categories, would further confirm whether the changes resolved the identified confusion.
+2.6  User Journey Evaluation — Donation Task Flow
+A user journey evaluation maps the full sequence of steps a user takes to complete a specific task, and in this case, making an online donation. This type of evaluation examines not just whether users can complete the task, but how much friction they encounter along the way, where trust may be compromised, and where the experience could be improved.
+The flow evaluated here traces the complete donation process from the global UNICEF homepage (unicef.org) through to the donation confirmation screen on the UNICEF USA platform (unicefusa.org). This is a closed user flow, as it follows a single, defined task from start to finish, including all decision points, system actions, and potential error states.
+  
+
+Figure: Visualization of the current donation user flow
+Monthly Giving: Consequences Not Explained
+Early in the donation form, users are presented with a choice between a one-time donation and a monthly recurring gift. The toggle appears simple and equivalent, but the consequences of selecting monthly are significantly different. Monthly giving enrolls the user in a recurring charge program that bills their card on the same date each month, creates an online monthly giving account, and requires the user to log in or contact UNICEF USA directly to modify or cancel. None of this information surfaced at the point of decision.
+A user who selects monthly without understanding this may feel misled when they see a repeat charge the following month, which damages trust and increases the likelihood of chargebacks or cancellation requests.
+Recommendation
+At the frequency selection step, add a brief disclosure explaining what monthly giving entails, including how to cancel. This does not need to be lengthy; a single sentence or tooltip (a small pop-up that appears on hover) would be sufficient to set accurate expectations and protect both the donor and UNICEF USA's reputation.
+	Strengths of the Donation Flow
+Despite these friction points, the donation form itself follows a well-established structural pattern that most experienced online donors will find familiar. Personal information and payment details are clearly separated into distinct sections, preset donation amounts are offered alongside a custom entry option, and the submit button is clearly labeled. These conventions lower the learning curve for completing the form.
+Error handling throughout the form is also effective at a structural level, as errors are flagged on specific fields rather than with a generic failure message, and users are never forced to restart the form after an error. When a payment is declined, users are returned to the payment entry step with their other form data preserved.
+The end-of-flow confirmation experience is a standout strength. Users receive both an on-screen confirmation with a thank-you message and a summary of their gift, and a confirmation email with receipt and tax information. This two-part confirmation meets the expectations of donors who need documentation for tax purposes and provides the closure that makes a financial transaction feel complete and trustworthy.
+________________
+
+
+Part 3 — Recommendations Recap
+The following consolidated list brings together all recommendations from this audit. They are grouped by priority level to help the UNICEF web team triage and plan improvements. Priority 1 items represent the highest-impact, most urgent fixes. Priority 2 items are significant improvements that can follow. Priority 3 items are enhancements that would strengthen the experience over time.
+Priority 1 — Critical: Highest Impact on Trust and Conversion
+Recommendation 1: Add Organizational Context Above the Fold
+Finding: The homepage does not identify what UNICEF is or does before scrolling. The acronym is never expanded.
+Action: Add a brief, plain-language descriptor to the hero section and expand "UNICEF" to "United Nations Children's Fund" at least once on the homepage.
+	
+
+Recommendation 2: Add a Transitional Message During the Donation Redirect
+Finding: US users are silently redirected from unicef.org to unicefusa.org with no explanation, creating the highest trust-risk moment in the donation journey.
+Action: Add an interstitial message or brief on-screen explanation when US users are redirected: "You are being directed to UNICEF USA, the official U.S. fundraising partner, to complete your donation securely."
+	
+
+Recommendation 3: Fix Color Contrast Across the Site
+Finding: 28 on 'What We Do' page and a failing logo contrast in the global header — failing WCAG AA standards.
+Action: Prioritize contrast fixes on the donation page and header. Run all pages against the WCAG AA standard (4.5:1 ratio for normal text) and resolve the highest-severity errors first.
+	
+
+Recommendation 4: Fix Heading Hierarchy Across All Pages
+Finding: Heading levels are skipped and inverted on multiple pages, and the homepage lacks an H1, disrupting screen reader navigation.
+Action: Audit and correct all heading levels to follow sequential order (H1 → H2 → H3). Add a descriptive H1 to the homepage.
+	Priority 2 — Important: Significant Usability and Accessibility Improvements
+
+
+Recommendation 5: Strengthen the Donate Button's Visual Contrast and Label
+Finding: The Donate button blends into the white-dominant interface and lacks urgency in its labeling.
+Action: Update the label to "Donate Now" and increase the button's visual contrast using the more of the existing blue and orange accent colors to differentiate it from surrounding navigation elements.
+	
+
+Recommendation 6: Implement Real-Time Form Validation
+Finding: All forms detect errors only after submission, increasing friction and frustration.
+Action: Add inline validation that checks input as users type, with specific error messages (e.g., "Please enter a valid email address") rather than generic field highlights.
+	
+
+Recommendation 7: Add a Progress Indicator to the Donation Flow
+Finding: The multi-step donation process provides no indication of how many steps remain, increasing anxiety and abandonment risk.
+Action: Add a visible step counter (e.g., "Step 2 of 3") or progress bar to each step of the donation flow.
+	
+
+Recommendation 8: Disclose Monthly Giving Consequences at Point of Selection
+Finding: The monthly giving option does not explain its implications (recurring charges, account creation, cancellation process) at the moment of decision.
+Action: Add a brief disclosure or tooltip at the frequency selection step explaining what monthly giving entails and how to cancel.
+	
+
+Recommendation 9: Fix Image Alt Text Inconsistencies
+Finding: Linked images in the Spotlight card section have empty alt text; other images have excessively long descriptions.
+Action: Apply a consistent alt text standard: concise descriptions for all meaningful and linked images; empty alt attributes for purely decorative images.
+	
+
+Recommendation 10: Refactor Card Components for Keyboard Navigation
+Finding: Card sections require multiple tab stops per visual unit, and the donation page lacks visible focus indicators.
+Action: Consolidate each card into a single keyboard-navigable unit. Add visible focus indicators to all interactive elements on the donation page. Investigate and resolve the screen reader instability on the donation page.
+	Priority 3 — Enhancements: Improving Clarity and Discoverability
+
+
+Recommendation 11: Clarify Navigation Category Distinctions
+Finding: "Who We Are" and "What We Do" are perceived as overlapping by users; location-based content causes consistent confusion.
+Action: Redefine category names and content assignments to reduce overlap. Create a clearly labeled section for location-based or regional content.
+	
+
+Recommendation 12: Improve Modal Dismissibility
+Finding: The donation modal cannot be dismissed by clicking outside it, and the close button is visually separated from the modal container.
+Action: Enable click-outside-to-dismiss behavior and position the close button visually within or adjacent to the modal container.
+	
+
+Recommendation 13: Add Loading Feedback During Page Transitions
+Finding: Navigation between pages provides minimal feedback beyond the browser's default loading animation.
+Action: Add progress indicators or skeleton loading states for key page transitions, particularly within the donation flow.
+	
+
+Recommendation 14: Surface Help Resources More Prominently
+Finding: FAQ and contact links are buried in the footer and easy to overlook.
+Action: Elevate help and contact resources into the main navigation or within relevant content pages, especially on the donation page.
+	________________
+
+
+Part 4 — Closing Reflections
+What This Audit Revealed
+UNICEF.org is a professionally designed, visually compelling website that effectively communicates the emotional urgency of its mission. The site's photography, storytelling, and consistent branding create a powerful first impression and establish organizational credibility. For users who arrive already sympathetic to UNICEF's cause, the experience is largely functional and engaging.
+However, this audit reveals a consistent gap between emotional trust and decision confidence. The site excels at making users feel, but does less to help users think. For a first-time visitor who wants to verify what UNICEF does, understand where their money goes, or simply confirm that they are in the right place before donating, the path is longer and more friction-filled than it needs to be.
+The most impactful issues identified are not complex redesign challenges, as many are targeted, low-effort fixes: expanding the UNICEF acronym on the homepage, adding a bridging message during the donation redirect, fixing heading hierarchy, and adding a progress indicator to the donation flow. These changes require minimal development time but could meaningfully increase trust, accessibility, and conversion rates.
+Recommended Next Steps
+Based on the priority framework in Part 3, the following immediate actions are recommended:
+* Address the homepage above-the-fold context gap and acronym expansion — this is a copy change that can be implemented without engineering work.
+* Add the bridging message for US users redirected to unicefusa.org — this is a single-sentence addition at a highly visible trust moment.
+* Commission a WCAG AA contrast audit of the donation page and header — these are flagged errors with the highest potential to exclude users with disabilities.
+* Correct heading hierarchy site-wide — this is a structural HTML fix that significantly improves screen reader accessibility.
+
+
+For longer-term improvements, the following testing investments are recommended:
+* Tree Testing: Validate revised navigation category names and structure against user expectations before implementing changes. This is a low-cost research method that can be run remotely with a small participant group.
+* Usability Testing on the Donation Flow: Observe real users attempting to complete a donation from the global UNICEF homepage through to confirmation. This would validate and expand the findings in this audit's user journey evaluation.
+* Screen Reader Audit: Conduct a targeted screen reader testing session on the donation page to identify and resolve the navigation instability found during this evaluation.
+* Ongoing Accessibility Monitoring: Incorporate automated contrast and accessibility checks into the site's regular deployment process so that new content does not introduce regressions.
+Closing Thought
+UNICEF's mission of protecting the rights and wellbeing of children around the world is one of the most important causes a website could serve. The experience of learning about that mission, trusting that organization, and choosing to support it should be as clear, welcoming, and friction-free as possible. The findings and recommendations in this audit are offered in that spirit: as an invitation to close the gap between the power of UNICEF's work and the clarity with which that work is communicated online.
+
+
+— Aja Kimsey
+UX2 Student, University of Colorado Boulder
+April 2026
